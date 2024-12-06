@@ -106,9 +106,9 @@ text = "Master Volume"
 
 [node name="HSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-min_value = 50.0
-step = 0.0
-value = 50.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="Label2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -118,9 +118,9 @@ text = "Sound SFX"
 
 [node name="Sound SFX" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-min_value = 50.0
-step = 0.0
-value = 50.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [node name="Music Volume" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -130,9 +130,9 @@ text = "Music Volume"
 
 [node name="HSlider3" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
-min_value = 50.0
-step = 0.0
-value = 50.0
+max_value = 1.0
+step = 0.05
+value = 1.0
 
 [connection signal="pressed" from="MuteOrUnMute" to="Control" method="_on_mute_or_un_mute_pressed"]
 [connection signal="pressed" from="Back Button" to="Control" method="_on_back_button_pressed"]

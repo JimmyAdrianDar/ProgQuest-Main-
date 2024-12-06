@@ -1,7 +1,7 @@
 extends Button
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("")
+	get_tree().change_scene_to_file("res://game.tscn")
 # Add Scene to Main Game
 
 func _on_settings_button_pressed() -> void:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://b8f7n82qy7sbu"]
+[gd_scene load_steps=9 format=3 uid="uid://b8f7n82qy7sbu"]
 
 [ext_resource type="Texture2D" uid="uid://bjdjmtb4i8hsn" path="res://Miscs Sprite/Movement.png" id="1_wwum5"]
 [ext_resource type="Texture2D" uid="uid://cnx4hbmciob71" path="res://Miscs Sprite/Movement Pressed.png" id="2_3fqhk"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dpp72yoiypua4" path="res://Miscs Sprite/Attack Pressed.png" id="4_vsi8s"]
 [ext_resource type="Texture2D" uid="uid://dqx0yq08km0xh" path="res://Miscs Sprite/Interact.png" id="5_aku0e"]
 [ext_resource type="Texture2D" uid="uid://43chlre7gik6" path="res://Miscs Sprite/Interact Pressed.png" id="6_1wt12"]
+[ext_resource type="Texture2D" uid="uid://ltxbhsjggs4v" path="res://Miscs Sprite/Settings.png" id="7_71e0y"]
+[ext_resource type="Texture2D" uid="uid://bkdtaw8uyef3v" path="res://Miscs Sprite/Settings Pressed.png" id="8_4shaj"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -68,3 +70,10 @@ scale = Vector2(0.14, 0.14)
 texture_normal = ExtResource("6_1wt12")
 texture_pressed = ExtResource("5_aku0e")
 action = "interact"
+
+[node name="Settings" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(1043, 15)
+scale = Vector2(0.085, 0.085)
+texture_normal = ExtResource("7_71e0y")
+texture_pressed = ExtResource("8_4shaj")
+action = "settings"
