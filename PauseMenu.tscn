@@ -1,0 +1,139 @@
+[gd_scene load_steps=16 format=3 uid="uid://683t1nywrwk6"]
+
+[ext_resource type="Texture2D" uid="uid://bve5alx55pff1" path="res://Background assets/Logo___8___1_-removebg-preview.png" id="1_os723"]
+[ext_resource type="Texture2D" uid="uid://87ogrcjv7uga" path="res://Background assets/Panel wapuse.png" id="1_pwb0e"]
+[ext_resource type="FontFile" uid="uid://cnjw4ot4bign3" path="res://Background assets/grapesoda_2/GrapeSoda.ttf" id="2_bnril"]
+[ext_resource type="Script" path="res://PauseMenu.gd" id="4_6uglu"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fppsb"]
+texture = ExtResource("1_pwb0e")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_558cg"]
+texture = ExtResource("1_os723")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp3wa"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yes8d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gm7r2"]
+bg_color = Color(0.254824, 0.146915, 0.069309, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lf2kv"]
+bg_color = Color(0.132149, 0.0668083, 0.0225134, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q800e"]
+bg_color = Color(0.305882, 0.180392, 0.0901961, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yrtks"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1c7qq"]
+bg_color = Color(0.254824, 0.146915, 0.069309, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7buta"]
+bg_color = Color(0.132149, 0.0668083, 0.0225134, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sfdmy"]
+bg_color = Color(0.305882, 0.180392, 0.0901961, 1)
+corner_radius_top_left = 14
+corner_radius_top_right = 14
+corner_radius_bottom_right = 14
+corner_radius_bottom_left = 14
+
+[node name="Pause Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 50.0
+offset_right = 842.0
+offset_bottom = 587.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_fppsb")
+
+[node name="Logo" type="Panel" parent="."]
+layout_mode = 2
+offset_left = 456.0
+offset_top = 62.0
+offset_right = 698.0
+offset_bottom = 289.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_558cg")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -153.0
+offset_top = -130.0
+offset_right = 154.0
+offset_bottom = 195.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_dp3wa")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bnril")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxTexture_yes8d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gm7r2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_lf2kv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_q800e")
+text = "Resume"
+script = ExtResource("4_6uglu")
+
+[node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bnril")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxTexture_yrtks")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1c7qq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7buta")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sfdmy")
+text = "Restart"
+
+[node name="QuitGame" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_bnril")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/focus = SubResource("StyleBoxTexture_yrtks")
+theme_override_styles/hover = SubResource("StyleBoxFlat_1c7qq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7buta")
+theme_override_styles/normal = SubResource("StyleBoxFlat_sfdmy")
+text = "Quit Game"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="PanelContainer/VBoxContainer/Resume" method="_on_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="PanelContainer/VBoxContainer/Resume" method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitGame" to="PanelContainer/VBoxContainer/Resume" method="_on_quit_game_pressed"]

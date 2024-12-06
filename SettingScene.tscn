@@ -1,0 +1,141 @@
+[gd_scene load_steps=15 format=3 uid="uid://ca0aoi1ky2mma"]
+
+[ext_resource type="AudioStream" uid="uid://dltg1wdtq6gft" path="res://Music - Sound Effects/Background Music.mp3" id="1_wbwhq"]
+[ext_resource type="Script" path="res://SettingsScene.gd" id="2_2by2v"]
+[ext_resource type="Texture2D" uid="uid://big1sp5ljiyd5" path="res://Background assets/Login Walpper.png" id="2_u8g30"]
+[ext_resource type="Texture2D" uid="uid://bve5alx55pff1" path="res://Background assets/Logo___8___1_-removebg-preview.png" id="3_dinxm"]
+[ext_resource type="Texture2D" uid="uid://bkl502qro73an" path="res://Background assets/UI Sound.png" id="5_cc4r7"]
+[ext_resource type="Texture2D" uid="uid://e462fbajsgjr" path="res://Background assets/UI back.png" id="6_aiyky"]
+[ext_resource type="FontFile" uid="uid://cnjw4ot4bign3" path="res://Background assets/grapesoda_2/GrapeSoda.ttf" id="7_cq7uq"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ubjr"]
+texture = ExtResource("2_u8g30")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5iff"]
+bg_color = Color(0, 0, 0, 0.815686)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4mdx"]
+texture = ExtResource("3_dinxm")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fdkfj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3caa6"]
+texture = ExtResource("5_cc4r7")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_beh5x"]
+texture = ExtResource("6_aiyky")
+
+[sub_resource type="FontVariation" id="FontVariation_ihi14"]
+base_font = ExtResource("7_cq7uq")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_wbwhq")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_2by2v")
+
+[node name="Background Photo" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8ubjr")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -706.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x5iff")
+
+[node name="ProgQuest Logo" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_right = -84.0
+offset_bottom = -441.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r4mdx")
+
+[node name="MuteOrUnMute" type="Button" parent="."]
+offset_left = 1093.0
+offset_top = 597.0
+offset_right = 1141.0
+offset_bottom = 636.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_fdkfj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_3caa6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_3caa6")
+theme_override_styles/normal = SubResource("StyleBoxTexture_3caa6")
+toggle_mode = true
+
+[node name="Back Button" type="Button" parent="."]
+offset_left = 32.0
+offset_top = 549.0
+offset_right = 93.0
+offset_bottom = 603.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_beh5x")
+theme_override_styles/hover = SubResource("StyleBoxTexture_beh5x")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_beh5x")
+theme_override_styles/normal = SubResource("StyleBoxTexture_beh5x")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 26.0
+offset_top = 208.0
+offset_right = 401.0
+offset_bottom = 476.0
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Master Volume" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ihi14")
+theme_override_font_sizes/font_size = 40
+text = "Master Volume"
+
+[node name="HSlider" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+min_value = 50.0
+step = 0.0
+value = 50.0
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ihi14")
+theme_override_font_sizes/font_size = 40
+text = "Sound SFX"
+
+[node name="Sound SFX" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+min_value = 50.0
+step = 0.0
+value = 50.0
+
+[node name="Music Volume" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_ihi14")
+theme_override_font_sizes/font_size = 40
+text = "Music Volume"
+
+[node name="HSlider3" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+min_value = 50.0
+step = 0.0
+value = 50.0
+
+[connection signal="pressed" from="MuteOrUnMute" to="Control" method="_on_mute_or_un_mute_pressed"]
+[connection signal="pressed" from="Back Button" to="Control" method="_on_back_button_pressed"]
+[connection signal="value_changed" from="VBoxContainer/HSlider" to="Control" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Sound SFX" to="Control" method="_on_h_slider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/HSlider3" to="Control" method="_on_h_slider_value_changed"]

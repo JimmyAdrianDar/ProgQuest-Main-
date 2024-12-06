@@ -1,0 +1,153 @@
+[gd_scene load_steps=20 format=3 uid="uid://cvh8l1hkwnfht"]
+
+[ext_resource type="AudioStream" uid="uid://dltg1wdtq6gft" path="res://Music - Sound Effects/Background Music.mp3" id="1_wk4u8"]
+[ext_resource type="Texture2D" uid="uid://big1sp5ljiyd5" path="res://Background assets/Login Walpper.png" id="2_dx2ka"]
+[ext_resource type="Texture2D" uid="uid://bve5alx55pff1" path="res://Background assets/Logo___8___1_-removebg-preview.png" id="3_u2d7h"]
+[ext_resource type="FontFile" uid="uid://cnjw4ot4bign3" path="res://Background assets/grapesoda_2/GrapeSoda.ttf" id="4_tfnh0"]
+[ext_resource type="Texture2D" uid="uid://7xg7f3djmiam" path="res://Background assets/UI Panel Box Pressed.png" id="5_j6bsr"]
+[ext_resource type="Texture2D" uid="uid://dyxis0wu215e5" path="res://Background assets/UI Panel Box.png" id="6_ihxeo"]
+[ext_resource type="Script" path="res://Main Menu.gd" id="7_xjied"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8ubjr"]
+texture = ExtResource("2_dx2ka")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sy62e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uhco8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bm3ih"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_w5ika"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5iff"]
+bg_color = Color(0, 0, 0, 0.815686)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_r4mdx"]
+texture = ExtResource("3_u2d7h")
+
+[sub_resource type="FontVariation" id="FontVariation_41btf"]
+base_font = ExtResource("4_tfnh0")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_72e7h"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oj78e"]
+texture = ExtResource("5_j6bsr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_in7q7"]
+texture = ExtResource("5_j6bsr")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqqcl"]
+texture = ExtResource("6_ihxeo")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+stream = ExtResource("1_wk4u8")
+autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background Photo" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_8ubjr")
+
+[node name="Credits" type="Button" parent="."]
+offset_left = 877.0
+offset_top = 83.0
+offset_right = 1103.0
+offset_bottom = 221.0
+theme_override_styles/focus = SubResource("StyleBoxTexture_sy62e")
+theme_override_styles/hover = SubResource("StyleBoxTexture_uhco8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_bm3ih")
+theme_override_styles/normal = SubResource("StyleBoxTexture_w5ika")
+text = "
+"
+
+[node name="Hint" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = -876.0
+offset_top = 541.0
+offset_right = -701.0
+offset_bottom = 564.0
+text = "People In Darkness :)"
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -706.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_x5iff")
+
+[node name="ProgQuest Logo" type="Panel" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 77.0
+offset_right = -84.0
+offset_bottom = -441.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_r4mdx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/ProgQuest Logo"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.5
+offset_top = 118.5
+offset_right = 178.5
+offset_bottom = 423.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Start Button" type="Button" parent="Panel/ProgQuest Logo/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_41btf")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_72e7h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oj78e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_in7q7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qqqcl")
+text = "Start Game!"
+script = ExtResource("7_xjied")
+
+[node name="Settings Button" type="Button" parent="Panel/ProgQuest Logo/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_41btf")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_72e7h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oj78e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_in7q7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qqqcl")
+text = "Settings"
+
+[node name="Quit Button" type="Button" parent="Panel/ProgQuest Logo/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontVariation_41btf")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxTexture_72e7h")
+theme_override_styles/hover = SubResource("StyleBoxTexture_oj78e")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_in7q7")
+theme_override_styles/normal = SubResource("StyleBoxTexture_qqqcl")
+text = "Quit"
+
+[connection signal="pressed" from="Credits" to="Panel/ProgQuest Logo/VBoxContainer/Start Button" method="_on_credits_pressed"]
+[connection signal="pressed" from="Panel/ProgQuest Logo/VBoxContainer/Start Button" to="Panel/ProgQuest Logo/VBoxContainer/Start Button" method="_on_pressed"]
+[connection signal="pressed" from="Panel/ProgQuest Logo/VBoxContainer/Settings Button" to="Panel/ProgQuest Logo/VBoxContainer/Start Button" method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Panel/ProgQuest Logo/VBoxContainer/Quit Button" to="Panel/ProgQuest Logo/VBoxContainer/Start Button" method="_on_quit_button_pressed"]
