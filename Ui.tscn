@@ -1,0 +1,70 @@
+[gd_scene load_steps=7 format=3 uid="uid://b8f7n82qy7sbu"]
+
+[ext_resource type="Texture2D" uid="uid://bjdjmtb4i8hsn" path="res://Miscs Sprite/Movement.png" id="1_wwum5"]
+[ext_resource type="Texture2D" uid="uid://cnx4hbmciob71" path="res://Miscs Sprite/Movement Pressed.png" id="2_3fqhk"]
+[ext_resource type="Texture2D" uid="uid://b5pynjqbhyhgp" path="res://Miscs Sprite/Attack.png" id="3_og763"]
+[ext_resource type="Texture2D" uid="uid://dpp72yoiypua4" path="res://Miscs Sprite/Attack Pressed.png" id="4_vsi8s"]
+[ext_resource type="Texture2D" uid="uid://dqx0yq08km0xh" path="res://Miscs Sprite/Interact.png" id="5_aku0e"]
+[ext_resource type="Texture2D" uid="uid://43chlre7gik6" path="res://Miscs Sprite/Interact Pressed.png" id="6_1wt12"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Up" type="TouchScreenButton" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(128, 399)
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_3fqhk")
+texture_pressed = ExtResource("1_wwum5")
+action = "up"
+
+[node name="Down" type="TouchScreenButton" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(192, 617)
+rotation = 3.14159
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_3fqhk")
+texture_pressed = ExtResource("1_wwum5")
+action = "down"
+
+[node name="Right" type="TouchScreenButton" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(284, 471)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_3fqhk")
+texture_pressed = ExtResource("1_wwum5")
+action = "right"
+
+[node name="Left" type="TouchScreenButton" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(36, 535)
+rotation = -1.5708
+scale = Vector2(0.1, 0.1)
+texture_normal = ExtResource("2_3fqhk")
+texture_pressed = ExtResource("1_wwum5")
+action = "left"
+
+[node name="Attack" type="TouchScreenButton" parent="CanvasLayer"]
+texture_filter = 1
+position = Vector2(806, 470)
+scale = Vector2(0.14, 0.14)
+texture_normal = ExtResource("4_vsi8s")
+texture_pressed = ExtResource("3_og763")
+action = "attack"
+
+[node name="Interact" type="TouchScreenButton" parent="CanvasLayer"]
+position = Vector2(951, 471)
+scale = Vector2(0.14, 0.14)
+texture_normal = ExtResource("6_1wt12")
+texture_pressed = ExtResource("5_aku0e")
+action = "interact"

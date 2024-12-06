@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://djfkn0pkprw73"
+path="res://.godot/imported/forest sound 1.mp3-77dedbc132786adca5943e4b8f68c520.mp3str"
+
+[deps]
+
+source_file="res://Audio/forest sound 1.mp3"
+dest_files=["res://.godot/imported/forest sound 1.mp3-77dedbc132786adca5943e4b8f68c520.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
