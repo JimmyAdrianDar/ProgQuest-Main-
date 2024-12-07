@@ -28,12 +28,15 @@ func _on_mute_or_un_mute_pressed() -> void:
 
 
 
-#var master_bus = AudioServer.get_bus_index("Master")
+func _on_master_value_changed(value: float):
+	set_volume(0, value)
+
+func set_volume(idx, value):
+	AudioServer.set_bus_volume_db(idx, linear_to_db(value))
+
+func _on_sound_sfx_value_changed(value):
+	set_volume(2, value)
 
 
-#func _on_h_slider_value_changed(value: float) -> void:
-#AudioServer.set_bus_volume_db(master_bus, value)
-#if value == -31:
-#AudioServer.set_bus_mute(master_bus, true)
-#else:
-#AudioServer.set_bus_mute(master_bus, false)
+func _on_music_value_changed(value):
+	set_volume(1, value)
