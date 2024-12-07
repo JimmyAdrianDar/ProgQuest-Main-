@@ -1,13 +1,27 @@
 extends Button
 
+func resume():
+	get_tree().paused = false
+
+func pause():
+	get_tree().paused = true
+
+func testEsc():
+	if Input.is_action_just_pressed("settings") and !get_tree().paused:
+		pause()
+	elif Input.is_action_just_pressed("settings") and get_tree().paused:
+		resume()
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file("")
-# Add Current Game Run Time
+	resume()
 
 func _on_restart_pressed() -> void:
-	get_tree().change_scene_to_file("")
-# Add Scene of Game Restarted
+	resume()
+	get_tree().reload_current_scene()
+
 
 func _on_quit_game_pressed() -> void:
-	get_tree().change_scene_to_file("res://MainMenu.tscn")
+	get_tree().quit()
+
+func _process(delta: float) -> void:
+	testEsc()

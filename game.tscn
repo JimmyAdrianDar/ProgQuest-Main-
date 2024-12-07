@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://ccof5jqljbe2h"]
+[gd_scene load_steps=6 format=3 uid="uid://ccof5jqljbe2h"]
 
 [ext_resource type="PackedScene" uid="uid://dugg2lxug1wm6" path="res://tile_map.tscn" id="1_8fp0q"]
 [ext_resource type="PackedScene" uid="uid://cne53txw5kgiw" path="res://Character and Monster tscn/Main Character.tscn" id="1_wgb06"]
 [ext_resource type="PackedScene" uid="uid://dltoes2lhnkrd" path="res://Character and Monster tscn/slime.tscn" id="2_bfp4q"]
+[ext_resource type="PackedScene" uid="uid://683t1nywrwk6" path="res://PauseMenu.tscn" id="4_dxc7a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd6qf"]
 size = Vector2(1213, 48)
@@ -62,3 +63,9 @@ position = Vector2(79, 38)
 [node name="Main Character" parent="CharacterContainer" instance=ExtResource("1_wgb06")]
 position = Vector2(88, 83)
 scale = Vector2(1.74, 1.74)
+
+[node name="PanelContainer" type="Node2D" parent="."]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="PanelContainer"]
+
+[node name="Pause Menu" parent="PanelContainer/CanvasLayer" instance=ExtResource("4_dxc7a")]
