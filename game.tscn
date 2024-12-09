@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccof5jqljbe2h"]
+[gd_scene load_steps=7 format=3 uid="uid://ccof5jqljbe2h"]
 
 [ext_resource type="PackedScene" uid="uid://dugg2lxug1wm6" path="res://tile_map.tscn" id="1_8fp0q"]
 [ext_resource type="PackedScene" uid="uid://cne53txw5kgiw" path="res://Character and Monster tscn/Main Character.tscn" id="1_wgb06"]
 [ext_resource type="PackedScene" uid="uid://dltoes2lhnkrd" path="res://Character and Monster tscn/slime.tscn" id="2_bfp4q"]
 [ext_resource type="PackedScene" uid="uid://683t1nywrwk6" path="res://PauseMenu.tscn" id="4_dxc7a"]
+[ext_resource type="PackedScene" uid="uid://yn8waqsf3md8" path="res://Character and Monster tscn/npc.tscn" id="4_mf6uh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sd6qf"]
 size = Vector2(1213, 48)
@@ -64,8 +65,15 @@ position = Vector2(79, 38)
 position = Vector2(88, 83)
 scale = Vector2(1.74, 1.74)
 
+[node name="Npc" parent="CharacterContainer" instance=ExtResource("4_mf6uh")]
+position = Vector2(425, 154)
+scale = Vector2(1.76, 1.76)
+
 [node name="PanelContainer" type="Node2D" parent="."]
+visible = false
 
 [node name="CanvasLayer" type="CanvasLayer" parent="PanelContainer"]
+visible = false
 
 [node name="Pause Menu" parent="PanelContainer/CanvasLayer" instance=ExtResource("4_dxc7a")]
+visible = false

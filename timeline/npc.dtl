@@ -1,0 +1,15 @@
+Npc: Hello
+Npc: Your clothes looks kinda strange.....
+Npc: Are you perhaps a traveller whose travelling around the world?
+- Yes, I am..
+- Kinda like that
+Npc: Really?? That's so cool
+Npc: Being able to go around the world.. That's so cool..
+Npc: I hope I can also become an adventurer
+- You can
+- Do you want to come with me?
+Npc: I wanted to, but I couldn't. My village needs me....
+Npc: Nevertheless, do you want to go inside the village?
+Npc: I will tour you around
+- Yes, I would love that
+- Hmm okay
