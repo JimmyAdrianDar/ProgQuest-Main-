@@ -66,7 +66,7 @@ position = Vector2(88, 83)
 scale = Vector2(1.74, 1.74)
 
 [node name="Npc" parent="CharacterContainer" instance=ExtResource("4_mf6uh")]
-position = Vector2(425, 154)
+position = Vector2(514, 131)
 scale = Vector2(1.76, 1.76)
 
 [node name="PanelContainer" type="Node2D" parent="."]

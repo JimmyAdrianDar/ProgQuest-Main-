@@ -188,6 +188,12 @@ frame = 7
 frame_progress = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.635, 1.635)
+limit_left = -3
+limit_top = 0
+limit_right = 1157
+limit_bottom = 647
+limit_smoothed = true
 
 [node name="Slash_Damage_Area" type="Area2D" parent="."]
 
