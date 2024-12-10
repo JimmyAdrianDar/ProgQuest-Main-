@@ -28,6 +28,9 @@ func _process(delta: float) -> void:
 	else:
 		label.hide()
 
+
+#System that lets player to interact multiple interactable in a certain distance
+#Don't let any other interactable get near the npc, it could cause an error.
 func _sort_by_distance_to_player(area1, area2):
 	var area1_to_player = player.global_position.distance_to(area1.global_positon)
 	var area2_to_player = player.global_position.distance_to(area2.global_postion)
