@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctnmnhufysns5"
-path="res://.godot/imported/Forest Cliff.png-d9f94c10251142c0ee62ef81e026db9d.ctex"
+uid="uid://dbxdoc8aim4gq"
+path="res://.godot/imported/mc attack animation+death.png-165aaf0650ea7273ba3f192ed32568c2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Forest Cliff.png"
-dest_files=["res://.godot/imported/Forest Cliff.png-d9f94c10251142c0ee62ef81e026db9d.ctex"]
+source_file="res://Player/Sprite/mc attack animation+death.png"
+dest_files=["res://.godot/imported/mc attack animation+death.png-165aaf0650ea7273ba3f192ed32568c2.ctex"]
 
 [params]
 

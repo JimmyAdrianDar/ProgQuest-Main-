@@ -13,7 +13,6 @@ config_version=5
 config/name="ProgQuest - Mobile"
 run/main_scene="res://MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
-config/icon="res://icon.svg"
 
 [autoload]
 
@@ -26,8 +25,7 @@ InteractionManager="*res://interaction/InteractionManager.tscn"
 [dialogic]
 
 directories/dch_directory={
-"Npc": "res://Character(Dialogic)/Npc.dch",
-"Yukio": "res://Yukio.dch"
+"Npc": "res://Character(Dialogic)/Npc.dch"
 }
 directories/dtl_directory={
 "Start": "res://Dialogue/Start.dtl",
@@ -46,9 +44,19 @@ window/stretch/aspect="expand"
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
+[file_customization]
+
+folder_colors={
+"res://Audio/": "red",
+"res://Miscs Sprite/": "gray",
+"res://Player/": "red",
+"res://interaction/": "gray"
+}
+
 [global_group]
 
 player=""
+enemy=""
 
 [input]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5pleqjmucctw"
-path="res://.godot/imported/Trees.png-da4216266dc7b3097fe3ca96dd2c74f3.ctex"
+uid="uid://vgfvm058sh17"
+path="res://.godot/imported/Forest Props.png-48dbde793975923ff45e160dbf705228.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Trees.png"
-dest_files=["res://.godot/imported/Trees.png-da4216266dc7b3097fe3ca96dd2c74f3.ctex"]
+source_file="res://TileSet/Forest Props.png"
+dest_files=["res://.godot/imported/Forest Props.png-48dbde793975923ff45e160dbf705228.ctex"]
 
 [params]
 

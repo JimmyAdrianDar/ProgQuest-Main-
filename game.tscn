@@ -1,13 +1,13 @@
 [gd_scene load_steps=7 format=3 uid="uid://ccof5jqljbe2h"]
 
-[ext_resource type="PackedScene" uid="uid://dugg2lxug1wm6" path="res://tile_map.tscn" id="1_8fp0q"]
-[ext_resource type="PackedScene" uid="uid://cne53txw5kgiw" path="res://Character and Monster tscn/Main Character.tscn" id="1_wgb06"]
+[ext_resource type="PackedScene" uid="uid://dugg2lxug1wm6" path="res://TileSet/tile_map.tscn" id="1_8fp0q"]
 [ext_resource type="PackedScene" uid="uid://dltoes2lhnkrd" path="res://Character and Monster tscn/slime.tscn" id="2_bfp4q"]
 [ext_resource type="PackedScene" uid="uid://683t1nywrwk6" path="res://PauseMenu.tscn" id="4_dxc7a"]
 [ext_resource type="PackedScene" uid="uid://yn8waqsf3md8" path="res://Character and Monster tscn/npc.tscn" id="4_mf6uh"]
+[ext_resource type="PackedScene" uid="uid://ph2t6bumjgfb" path="res://Player/Scene/player.tscn" id="5_3bvb7"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd6qf"]
-size = Vector2(1213, 48)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrta1"]
+size = Vector2(1189, 20)
 
 [node name="Game" type="Node2D"]
 
@@ -22,8 +22,8 @@ size = Vector2(1213, 48)
 [node name="StaticBody2D" type="StaticBody2D" parent="WorldContainer/InvisibleWallContainer"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="WorldContainer/InvisibleWallContainer/StaticBody2D"]
-position = Vector2(596.5, -14)
-shape = SubResource("RectangleShape2D_sd6qf")
+position = Vector2(584.5, 0)
+shape = SubResource("RectangleShape2D_mrta1")
 
 [node name="MobsContainer" type="Node2D" parent="."]
 position = Vector2(0, 4)
@@ -61,13 +61,16 @@ collision_mask = 3
 [node name="CharacterContainer" type="Node2D" parent="."]
 position = Vector2(79, 38)
 
-[node name="Main Character" parent="CharacterContainer" instance=ExtResource("1_wgb06")]
-position = Vector2(88, 83)
-scale = Vector2(1.74, 1.74)
-
 [node name="Npc" parent="CharacterContainer" instance=ExtResource("4_mf6uh")]
 position = Vector2(514, 131)
 scale = Vector2(1.76, 1.76)
+
+[node name="Player" parent="CharacterContainer" instance=ExtResource("5_3bvb7")]
+light_mask = 3
+visibility_layer = 3
+position = Vector2(69, 69)
+collision_layer = 3
+collision_mask = 3
 
 [node name="PanelContainer" type="Node2D" parent="."]
 visible = false

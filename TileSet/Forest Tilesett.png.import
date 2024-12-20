@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://lwuhouappsg0"
-path="res://.godot/imported/Tilemap_Flat.png-3a00f6b08bc1588fbe6c2a9048069010.ctex"
+uid="uid://bn4usmwmllnph"
+path="res://.godot/imported/Forest Tilesett.png-086d10e1ee05bf5eb517de7e1ab75dc2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilemap_Flat.png"
-dest_files=["res://.godot/imported/Tilemap_Flat.png-3a00f6b08bc1588fbe6c2a9048069010.ctex"]
+source_file="res://TileSet/Forest Tilesett.png"
+dest_files=["res://.godot/imported/Forest Tilesett.png-086d10e1ee05bf5eb517de7e1ab75dc2.ctex"]
 
 [params]
 

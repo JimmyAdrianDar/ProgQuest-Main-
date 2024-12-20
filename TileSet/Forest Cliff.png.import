@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ukxegenw6sr"
-path="res://.godot/imported/2.png-ab3260f4fd0674a396d7a21b320365d7.ctex"
+uid="uid://ctnmnhufysns5"
+path="res://.godot/imported/Forest Cliff.png-f3cebbf68dec2c7644e6c946ed3d6fb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character and Monster Sprite/2.png"
-dest_files=["res://.godot/imported/2.png-ab3260f4fd0674a396d7a21b320365d7.ctex"]
+source_file="res://TileSet/Forest Cliff.png"
+dest_files=["res://.godot/imported/Forest Cliff.png-f3cebbf68dec2c7644e6c946ed3d6fb5.ctex"]
 
 [params]
 

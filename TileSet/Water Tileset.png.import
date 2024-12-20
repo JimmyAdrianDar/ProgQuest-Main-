@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bgsx386sum5vq"
-path="res://.godot/imported/Main Character (idle).png-fa5e22e29b0ec70a51e3d316c85aad10.ctex"
+uid="uid://bsf0avh68sicc"
+path="res://.godot/imported/Water Tileset.png-e75aafeb6a5264a56cb7f0a072970490.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character and Monster Sprite/Main Character (idle).png"
-dest_files=["res://.godot/imported/Main Character (idle).png-fa5e22e29b0ec70a51e3d316c85aad10.ctex"]
+source_file="res://TileSet/Water Tileset.png"
+dest_files=["res://.godot/imported/Water Tileset.png-e75aafeb6a5264a56cb7f0a072970490.ctex"]
 
 [params]
 

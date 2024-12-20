@@ -1,9 +1,6 @@
 extends CharacterBody2D
 
-class_name Player
-
 @onready var healthbar = $CanvasLayer/Healthbar
-
 
 var health = 100
 var is_attacking = false
@@ -20,6 +17,7 @@ func _ready() -> void:
 func _process(delta):
 	enemy_attack()
 	attack()
+	input_movement(delta)
 	
 	if health <= 0:
 		player_alive = false
@@ -27,9 +25,16 @@ func _process(delta):
 		print("Player killed")
 		self.queue_free()
 	
+	# Update animation based on movement state if not attacking
+	
+	# Play the "Slash" animation when the attack button is pressed
+	if Input.is_action_just_pressed("attack") and not is_attacking:
+		is_attacking = true
+		$AnimatedSprite2D.play("Slash")
+
+func input_movement(delta):
 	var velocity = Vector2.ZERO
 	
-	# Check for movement inputs
 	if Input.is_action_pressed("up") || Input.is_action_pressed("ui_w"):
 		velocity.y -= 200
 	if Input.is_action_pressed("down") || Input.is_action_pressed("ui_s"):
@@ -40,23 +45,17 @@ func _process(delta):
 	if Input.is_action_pressed("right") || Input.is_action_pressed("ui_d"):
 		velocity.x += 200
 		$AnimatedSprite2D.flip_h = false
-
-	# Update animation based on movement state if not attacking
+	
+	position += velocity * delta
+	
+	#Fixing attack and run bug
 	if not is_attacking:
 		if velocity.length() > 0:
 			update_animation("Run")
 		else:
 			update_animation("Idle")
 
-	# Apply movement
-	position += velocity * delta
-	
-	# Play the "Slash" animation when the attack button is pressed
-	if Input.is_action_just_pressed("attack") and not is_attacking:
-		is_attacking = true
-		$AnimatedSprite2D.play("Slash")
-
-# Function to update animation only when necessary
+#Instantly update the animation after it finishes
 func update_animation(animation_name: String):
 	if $AnimatedSprite2D.animation != animation_name:
 		$AnimatedSprite2D.play(animation_name)
@@ -65,18 +64,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if $AnimatedSprite2D.animation == "Slash":
 		is_attacking = false
 		Global.player_current_attack = false
-
-#Important func, it significe the identity of the main character in other scene
-func player():
-	pass
-
-func _on_slash_damage_area_body_entered(body: Node2D) -> void:
-	if body.has_method("enemy"):
-		enemy_inattack_range = true
-
-func _on_slash_damage_area_body_exited(body: Node2D) -> void:
-	if body.has_method("enemy"):
-		enemy_inattack_range = false
 
 func enemy_attack():
 	if enemy_inattack_range and enemy_attack_cooldown:
@@ -121,3 +108,11 @@ func _on_natural_healing_timeout() -> void:
 			$Natural_Healing.stop()
 	else:
 		$Natural_Healing.stop()
+
+func _on_hitbox_body_entered(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		enemy_inattack_range = true
+
+func _on_hitbox_body_exited(body: Node2D) -> void:
+	if body.is_in_group("enemy"):
+		enemy_inattack_range = false

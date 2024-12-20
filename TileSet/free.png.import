@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtsr5q8h1gpcv"
-path="res://.godot/imported/mc attack animation+death.png-e08071da970558988b401754f2f7e3c3.ctex"
+uid="uid://bh368aw0eodry"
+path="res://.godot/imported/free.png-d84a22c8cb26baa33ef464eeea6e4f7d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character and Monster Sprite/mc attack animation+death.png"
-dest_files=["res://.godot/imported/mc attack animation+death.png-e08071da970558988b401754f2f7e3c3.ctex"]
+source_file="res://TileSet/free.png"
+dest_files=["res://.godot/imported/free.png-d84a22c8cb26baa33ef464eeea6e4f7d.ctex"]
 
 [params]
 

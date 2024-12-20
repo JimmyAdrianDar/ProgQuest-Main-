@@ -1,13 +1,13 @@
 [gd_scene load_steps=31 format=4 uid="uid://dugg2lxug1wm6"]
 
-[ext_resource type="Texture2D" uid="uid://bn4usmwmllnph" path="res://Forest Tilesett.png" id="1_3o0ux"]
-[ext_resource type="Texture2D" uid="uid://vgfvm058sh17" path="res://Forest Props.png" id="2_047ev"]
-[ext_resource type="Texture2D" uid="uid://ctnmnhufysns5" path="res://Forest Cliff.png" id="3_j20tb"]
-[ext_resource type="Texture2D" uid="uid://btv640a8i7g3p" path="res://TX Tileset Grass.png" id="4_4ef10"]
-[ext_resource type="Texture2D" uid="uid://5pleqjmucctw" path="res://Trees.png" id="4_d5oqv"]
-[ext_resource type="Texture2D" uid="uid://bsf0avh68sicc" path="res://Water Tileset.png" id="5_inrr2"]
-[ext_resource type="Texture2D" uid="uid://lwuhouappsg0" path="res://Tilemap_Flat.png" id="6_h4fle"]
-[ext_resource type="Texture2D" uid="uid://bh368aw0eodry" path="res://free.png" id="7_wwrup"]
+[ext_resource type="Texture2D" uid="uid://bn4usmwmllnph" path="res://TileSet/Forest Tilesett.png" id="1_3o0ux"]
+[ext_resource type="Texture2D" uid="uid://vgfvm058sh17" path="res://TileSet/Forest Props.png" id="2_047ev"]
+[ext_resource type="Texture2D" uid="uid://ctnmnhufysns5" path="res://TileSet/Forest Cliff.png" id="3_j20tb"]
+[ext_resource type="Texture2D" uid="uid://btv640a8i7g3p" path="res://TileSet/TX Tileset Grass.png" id="4_4ef10"]
+[ext_resource type="Texture2D" uid="uid://5pleqjmucctw" path="res://TileSet/Trees.png" id="4_d5oqv"]
+[ext_resource type="Texture2D" uid="uid://bsf0avh68sicc" path="res://TileSet/Water Tileset.png" id="5_inrr2"]
+[ext_resource type="Texture2D" uid="uid://lwuhouappsg0" path="res://TileSet/Tilemap_Flat.png" id="6_h4fle"]
+[ext_resource type="Texture2D" uid="uid://bh368aw0eodry" path="res://TileSet/free.png" id="7_wwrup"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ppnwj"]
 texture = ExtResource("1_3o0ux")

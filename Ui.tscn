@@ -58,14 +58,14 @@ action = "left"
 
 [node name="Attack" type="TouchScreenButton" parent="CanvasLayer"]
 texture_filter = 1
-position = Vector2(806, 470)
+position = Vector2(836, 469)
 scale = Vector2(0.14, 0.14)
 texture_normal = ExtResource("4_vsi8s")
 texture_pressed = ExtResource("3_og763")
 action = "attack"
 
 [node name="Interact" type="TouchScreenButton" parent="CanvasLayer"]
-position = Vector2(951, 471)
+position = Vector2(981, 470)
 scale = Vector2(0.14, 0.14)
 texture_normal = ExtResource("6_1wt12")
 texture_pressed = ExtResource("5_aku0e")

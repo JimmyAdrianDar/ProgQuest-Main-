@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5plbd3ra8oci"
-path="res://.godot/imported/Main Character.png-8171b19e84575e40293dece2b3df847a.ctex"
+uid="uid://dakkjmhfww3im"
+path="res://.godot/imported/mc idle+run.png-91ad3c11eae74eb37ec3f4131fc578dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Character and Monster Sprite/Main Character.png"
-dest_files=["res://.godot/imported/Main Character.png-8171b19e84575e40293dece2b3df847a.ctex"]
+source_file="res://Player/Sprite/mc idle+run.png"
+dest_files=["res://.godot/imported/mc idle+run.png-91ad3c11eae74eb37ec3f4131fc578dc.ctex"]
 
 [params]
 

@@ -46,26 +46,22 @@ func _physics_process(delta: float) -> void:
 
 #Detection Function
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body.has_method("player"):
+	if body.is_in_group("player"):
 		player_in_area = true
 		player = body
 
 #Detection Function
 func _on_area_2d_body_exited(body: Node2D) -> void:
-	if body.has_method("player"):
+	if body.is_in_group("player"):
 		player_in_area = false
 		player = null
 
-#IMPORTANT!! It is the identity of the Slime in other scene
-func enemy():
-	pass
-
 func _on_hitbox_body_entered(body: Node2D) -> void:
-	if body.has_method("player"):
+	if body.is_in_group("player"):
 		player_inattack_zone = true
 
 func _on_hitbox_body_exited(body: Node2D) -> void:
-	if body.has_method("player"):
+	if body.is_in_group("player"):
 		player_inattack_zone = false
 
 func take_damage():
