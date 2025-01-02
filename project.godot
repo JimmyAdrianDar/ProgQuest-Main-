@@ -57,6 +57,7 @@ folder_colors={
 
 player=""
 enemy=""
+npc=""
 
 [input]
 

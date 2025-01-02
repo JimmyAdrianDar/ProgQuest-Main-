@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bve5alx55pff1" path="res://Background assets/Logo___8___1_-removebg-preview.png" id="1_os723"]
 [ext_resource type="Texture2D" uid="uid://87ogrcjv7uga" path="res://Background assets/Panel wapuse.png" id="1_pwb0e"]
+[ext_resource type="Script" path="res://pause_menu.gd" id="1_yg6y4"]
 [ext_resource type="FontFile" uid="uid://cnjw4ot4bign3" path="res://Background assets/grapesoda_2/GrapeSoda.ttf" id="2_bnril"]
-[ext_resource type="Script" path="res://PauseMenu.gd" id="4_6uglu"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fppsb"]
 texture = ExtResource("1_pwb0e")
@@ -60,12 +60,14 @@ corner_radius_bottom_right = 14
 corner_radius_bottom_left = 14
 
 [node name="Pause Menu" type="Control"]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_yg6y4")
 
 [node name="BG" type="Panel" parent="."]
 layout_mode = 0
@@ -112,7 +114,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_gm7r2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lf2kv")
 theme_override_styles/normal = SubResource("StyleBoxFlat_q800e")
 text = "Resume"
-script = ExtResource("4_6uglu")
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
@@ -134,6 +135,6 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_7buta")
 theme_override_styles/normal = SubResource("StyleBoxFlat_sfdmy")
 text = "Quit Game"
 
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="PanelContainer/VBoxContainer/Resume" method="_on_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="PanelContainer/VBoxContainer/Resume" method="_on_restart_pressed"]
-[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitGame" to="PanelContainer/VBoxContainer/Resume" method="_on_quit_game_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/QuitGame" to="." method="_on_quit_game_pressed"]

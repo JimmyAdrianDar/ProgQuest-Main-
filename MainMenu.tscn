@@ -40,6 +40,7 @@ texture = ExtResource("5_j6bsr")
 texture = ExtResource("6_ihxeo")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
 stream = ExtResource("1_wk4u8")
 autoplay = true
 

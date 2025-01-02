@@ -29,6 +29,7 @@ texture = ExtResource("6_aiyky")
 base_font = ExtResource("7_cq7uq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
+process_mode = 3
 stream = ExtResource("1_wbwhq")
 
 [node name="Control" type="Control" parent="."]

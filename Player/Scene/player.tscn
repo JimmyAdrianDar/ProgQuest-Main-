@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ph2t6bumjgfb"]
+[gd_scene load_steps=30 format=3 uid="uid://ph2t6bumjgfb"]
 
 [ext_resource type="Script" path="res://Player/Script/player.gd" id="1_y00a6"]
 [ext_resource type="Texture2D" uid="uid://dakkjmhfww3im" path="res://Player/Sprite/mc idle+run.png" id="2_oyjl2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dbxdoc8aim4gq" path="res://Player/Sprite/mc attack animation+death.png" id="3_yuqmb"]
 [ext_resource type="PackedScene" uid="uid://bxog51hcup8oj" path="res://Character and Monster tscn/healthbar.tscn" id="4_0ural"]
 [ext_resource type="Texture2D" uid="uid://vci3otqqvnnu" path="res://Player/Sprite/Picsart_24-10-04_08-04-15-624 (3).png" id="4_bw3mg"]
+[ext_resource type="PackedScene" uid="uid://683t1nywrwk6" path="res://PauseMenu.tscn" id="7_nosbw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wriii"]
 atlas = ExtResource("2_oyjl2")
@@ -170,8 +171,10 @@ script = ExtResource("1_y00a6")
 texture_filter = 1
 position = Vector2(0, -8)
 sprite_frames = SubResource("SpriteFrames_4qfe8")
-animation = &"Slash"
+animation = &"Run"
 autoplay = "Idle"
+frame = 4
+frame_progress = 0.588167
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 1)
@@ -197,6 +200,11 @@ offset_right = 220.0
 offset_bottom = 14.0
 scale = Vector2(2.27, 2.27)
 
+[node name="Pause Menu" parent="CanvasLayer" instance=ExtResource("7_nosbw")]
+visible = false
+offset_left = 51.0
+offset_right = 51.0
+
 [node name="Deal_attack_timer" type="Timer" parent="."]
 wait_time = 0.7
 
@@ -204,7 +212,7 @@ wait_time = 0.7
 wait_time = 2.0
 
 [node name="Natural_Healing" type="Timer" parent="."]
-wait_time = 7.5
+wait_time = 3.5
 
 [node name="Hitbox" type="Area2D" parent="."]
 
@@ -212,8 +220,14 @@ wait_time = 7.5
 position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_7b48v")
 
+[node name="Damage_Detection_Timer" type="Timer" parent="."]
+wait_time = 8.0
+one_shot = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="timeout" from="Deal_attack_timer" to="." method="_on_deal_attack_timer_timeout"]
 [connection signal="timeout" from="Attack_Cooldown" to="." method="_on_attack_cooldown_timeout"]
 [connection signal="timeout" from="Natural_Healing" to="." method="_on_natural_healing_timeout"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]
 [connection signal="body_exited" from="Hitbox" to="." method="_on_hitbox_body_exited"]
+[connection signal="timeout" from="Damage_Detection_Timer" to="." method="_on_damage_detection_timer_timeout"]

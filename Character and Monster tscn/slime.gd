@@ -14,6 +14,7 @@ var enemy_takingdamage = true
 var player_inattack_zone = false
 
 
+
 func _ready() -> void:
 	health = 100
 	healthbar.init_health(health)

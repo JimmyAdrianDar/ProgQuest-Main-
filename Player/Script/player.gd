@@ -13,6 +13,8 @@ var player_alive = true
 func _ready() -> void:
 	health = 100
 	healthbar.init_health(health)
+	$Damage_Detection_Timer.stop()  # Stop the timer initially
+	$Natural_Healing.stop()         # Ensure the healing timer is stopped initially
 
 func _process(delta):
 	enemy_attack()
@@ -21,16 +23,17 @@ func _process(delta):
 	
 	if health <= 0:
 		player_alive = false
-		health = 0
-		print("Player killed")
-		self.queue_free()
+		death_animation()
 	
-	# Update animation based on movement state if not attacking
-	
-	# Play the "Slash" animation when the attack button is pressed
+	# Ensuring the slash animation doesn't overlap with other animations
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		is_attacking = true
 		$AnimatedSprite2D.play("Slash")
+
+func death_animation():
+	if not player_alive and health <= 0:
+		print("Player killed")
+		self.queue_free()
 
 func input_movement(delta):
 	var velocity = Vector2.ZERO
@@ -48,14 +51,12 @@ func input_movement(delta):
 	
 	position += velocity * delta
 	
-	#Fixing attack and run bug
 	if not is_attacking:
 		if velocity.length() > 0:
 			update_animation("Run")
 		else:
 			update_animation("Idle")
 
-#Instantly update the animation after it finishes
 func update_animation(animation_name: String):
 	if $AnimatedSprite2D.animation != animation_name:
 		$AnimatedSprite2D.play(animation_name)
@@ -70,13 +71,10 @@ func enemy_attack():
 		print("Enemy attack.")
 		health -= 3
 		healthbar.health = health  # Update health on the health bar
-		print("Player health after attack: " + str(health))
 		
-		# Start the Natural_Healing timer if health drops below 100
-		if health < 100 and $Natural_Healing.is_stopped():
-			print("Starting Natural Healing...")
-			$Natural_Healing.start()
-			
+		# Restart the damage detection timer whenever damage is taken
+		$Damage_Detection_Timer.start()
+		
 		enemy_attack_cooldown = false
 		$Attack_Cooldown.start()
 
@@ -94,6 +92,12 @@ func _on_deal_attack_timer_timeout() -> void:
 	$Deal_attack_timer.stop()
 	Global.player_current_attack = false
 	attack_ip = false
+
+# Trigger natural healing only if the player has stopped taking damage
+func _on_damage_detection_timer_timeout() -> void:
+	if health < 100 and $Natural_Healing.is_stopped():
+		print("Player has stopped taking continuous damage. Starting Natural Healing...")
+		$Natural_Healing.start()
 
 func _on_natural_healing_timeout() -> void:
 	if health < 100:

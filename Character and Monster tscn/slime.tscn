@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dltoes2lhnkrd"]
+[gd_scene load_steps=65 format=3 uid="uid://dltoes2lhnkrd"]
 
 [ext_resource type="Texture2D" uid="uid://bd7riyvmgcthu" path="res://Character and Monster Sprite/slime.png" id="1_mg781"]
 [ext_resource type="Script" path="res://Character and Monster tscn/slime.gd" id="1_o727p"]
@@ -450,13 +450,16 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f51cr"]
-radius = 2.82843
+radius = 3.16228
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pp8nk"]
 radius = 75.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ncd5l"]
 radius = 12.0416
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5y8gm"]
+radius = 5.09902
 
 [node name="Slime" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 2
@@ -501,6 +504,12 @@ offset_right = 9.0
 offset_bottom = -12.0
 metadata/_edit_use_anchors_ = true
 
+[node name="Knockback" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Knockback"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_5y8gm")
+
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
@@ -510,3 +519,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="timeout" from="Taking_damage" to="." method="_on_taking_damage_timeout"]
 [connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]
 [connection signal="timeout" from="DeathCooldownTimer" to="." method="_on_death_cooldown_timer_timeout"]
+[connection signal="body_entered" from="Knockback" to="." method="_on_knockback_body_entered"]
