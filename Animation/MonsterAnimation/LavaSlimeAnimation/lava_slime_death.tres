@@ -1,0 +1,24 @@
+[gd_resource type="AnimationNodeBlendSpace2D" load_steps=5 format=3 uid="uid://djtwv370dd5bl"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_md601"]
+animation = &"death_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_and45"]
+animation = &"death_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_5bmvp"]
+animation = &"death_right"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t2cbd"]
+animation = &"death_left"
+
+[resource]
+blend_point_0/node = SubResource("AnimationNodeAnimation_md601")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_and45")
+blend_point_1/pos = Vector2(0, -0.9)
+blend_point_2/node = SubResource("AnimationNodeAnimation_5bmvp")
+blend_point_2/pos = Vector2(1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_t2cbd")
+blend_point_3/pos = Vector2(-1, 0)
+blend_mode = 1

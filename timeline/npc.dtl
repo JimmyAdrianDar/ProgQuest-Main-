@@ -1,5 +1,6 @@
-Npc: Hey there! I see you’ve made it through all those quests and challenges. That’s no small feat!
-Npc: I can tell you really put in the work. Perseverance like that doesn’t go unnoticed.
+join Try center [z_index="2"]
+Try: Hey there! I see you’ve made it through all those quests and challenges. That’s no small feat!
+Try: I can tell you really put in the work. Perseverance like that doesn’t go unnoticed.
 - I’ve learned a lot along the way.
 - I couldn’t have done it without all the challenges pushing me forward.
 Npc: Exactly! Every challenge, every puzzle, it all builds you up. And now, I’ve got something for you, as a token of appreciation.

@@ -25,7 +25,8 @@ InteractionManager="*res://interaction/InteractionManager.tscn"
 [dialogic]
 
 directories/dch_directory={
-"Npc": "res://Character(Dialogic)/Npc.dch"
+"Npc": "res://Character(Dialogic)/Npc.dch",
+"Try": "res://Try.dch"
 }
 directories/dtl_directory={
 "Start": "res://Dialogue/Start.dtl",
@@ -34,6 +35,28 @@ directories/dtl_directory={
 variables={
 "Respond(Travelling)": ""
 }
+extensions_folder="res://addons/dialogic_additions"
+text/letter_speed=0.01
+text/initial_text_reveal_skippable=true
+text/text_reveal_skip_delay=0.1
+text/advance_delay=0.1
+text/autoadvance_per_character_delay=0.1
+text/autoadvance_ignored_characters_enabled=true
+animations/join_default_length=0.5
+animations/join_default_wait=true
+animations/leave_default_length=0.5
+animations/leave_default_wait=true
+animations/cross_fade_default_length=0.5
+choices/autofocus_first=true
+choices/delay=0.2
+choices/reveal_delay=0
+choices/reveal_by_input=false
+save/autosave_delay=60.0
+save/encryption_on_exports_only=true
+text/autopauses={}
+glossary/default_case_sensitive=true
+layout/style_list=[]
+layout/default_style="Default"
 
 [display]
 
@@ -47,9 +70,10 @@ enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 [file_customization]
 
 folder_colors={
-"res://Audio/": "red",
+"res://Animation/": "red",
 "res://Miscs Sprite/": "gray",
-"res://Player/": "red",
+"res://Scene/": "red",
+"res://Sprite/": "red",
 "res://interaction/": "gray"
 }
 
@@ -122,6 +146,15 @@ dialogic_default_action={
 [input_devices]
 
 pointing/emulate_touch_from_mouse=true
+
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="Enemy"
+2d_physics/layer_3="Environment"
+2d_physics/layer_4="Npc"
+2d_physics/layer_5="Hitbox"
+2d_physics/layer_6="Attack"
 
 [rendering]
 

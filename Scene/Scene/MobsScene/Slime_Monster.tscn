@@ -1,0 +1,113 @@
+[gd_scene load_steps=18 format=3 uid="uid://ba5bfn6da45cq"]
+
+[ext_resource type="Script" path="res://Scene/Script/MobsScript/slime_monster.gd" id="1_b2nyk"]
+[ext_resource type="Texture2D" uid="uid://bd7riyvmgcthu" path="res://Sprite/MobsSprite/slime.png" id="2_4ea4w"]
+[ext_resource type="PackedScene" uid="uid://ko874n1gwkwk" path="res://Scene/Scene/ComponentScene/stat_component.tscn" id="4_7r8k8"]
+[ext_resource type="PackedScene" uid="uid://buycf6ln4yg5s" path="res://Scene/Scene/ComponentScene/health_component.tscn" id="5_fmvwt"]
+[ext_resource type="PackedScene" uid="uid://bcylm4m1venn2" path="res://Scene/Scene/ComponentScene/hitbox_component.tscn" id="6_wh4vn"]
+[ext_resource type="PackedScene" uid="uid://bxog51hcup8oj" path="res://Character and Monster tscn/healthbar.tscn" id="7_2tbcg"]
+[ext_resource type="PackedScene" uid="uid://df4kx0u4m4ojc" path="res://Scene/Scene/ComponentScene/attack_component.tscn" id="7_70x7l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cx1t7"]
+atlas = ExtResource("2_4ea4w")
+region = Rect2(0, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lg4no"]
+atlas = ExtResource("2_4ea4w")
+region = Rect2(32, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dau0n"]
+atlas = ExtResource("2_4ea4w")
+region = Rect2(64, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hacyl"]
+atlas = ExtResource("2_4ea4w")
+region = Rect2(96, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qc2bw"]
+atlas = ExtResource("2_4ea4w")
+region = Rect2(128, 96, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pn3x8"]
+atlas = ExtResource("2_4ea4w")
+region = Rect2(160, 96, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uq6nd"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cx1t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lg4no")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dau0n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hacyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qc2bw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pn3x8")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_o2qrd"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iho4l"]
+radius = 3.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_etnqk"]
+radius = 12.0
+
+[node name="SlimeMonster" type="CharacterBody2D" groups=["enemy"]]
+motion_mode = 1
+script = ExtResource("1_b2nyk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.33, 0.33)
+sprite_frames = SubResource("SpriteFrames_uq6nd")
+animation = &"Idle"
+autoplay = "Idle"
+frame_progress = 0.428518
+
+[node name="Healthbar" parent="." instance=ExtResource("7_2tbcg")]
+offset_left = -3.0
+offset_top = -4.0
+offset_right = 71.0
+offset_bottom = 1.0
+scale = Vector2(0.09, 0.09)
+metadata/_edit_use_anchors_ = true
+
+[node name="PhysicsCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_o2qrd")
+
+[node name="StatComponent" parent="." instance=ExtResource("4_7r8k8")]
+Damage = 5
+AttackCooldown = 3.5
+
+[node name="HealthComponent" parent="." instance=ExtResource("5_fmvwt")]
+stat_component_path = NodePath("../StatComponent")
+
+[node name="HitboxComponent" parent="." instance=ExtResource("6_wh4vn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+visible = false
+shape = SubResource("CircleShape2D_iho4l")
+
+[node name="AttackComponent" parent="." instance=ExtResource("7_70x7l")]
+stat_component_path = NodePath("../StatComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackComponent"]
+shape = SubResource("CircleShape2D_etnqk")
+
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]
+[connection signal="receive_damage" from="HitboxComponent" to="." method="_on_hitbox_component_receive_damage"]

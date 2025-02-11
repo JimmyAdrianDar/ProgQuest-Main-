@@ -1,0 +1,24 @@
+[gd_resource type="AnimationNodeBlendSpace2D" load_steps=5 format=3 uid="uid://di5334bt5chs3"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_7mmwq"]
+animation = &"BackRunLeft"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_12n8v"]
+animation = &"BackRunRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_hsh45"]
+animation = &"FrontRunRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_60h71"]
+animation = &"FrontRunLeft"
+
+[resource]
+blend_point_0/node = SubResource("AnimationNodeAnimation_7mmwq")
+blend_point_0/pos = Vector2(-1, -1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_12n8v")
+blend_point_1/pos = Vector2(1, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_hsh45")
+blend_point_2/pos = Vector2(1, 0.8)
+blend_point_3/node = SubResource("AnimationNodeAnimation_60h71")
+blend_point_3/pos = Vector2(-1, 0.8)
+blend_mode = 1

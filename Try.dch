@@ -8,22 +8,22 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "truy",
+"default_portrait": "halo",
 "description": "",
-"display_name": "Bob",
+"display_name": "Try",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"truy": {
+"halo": {
 "export_overrides": {
 "image": "\"res://timeline/dialogue.png\""
 },
 "mirror": false,
-"offset": Vector2(0, 0),
+"offset": Vector2(100, -160),
 "scale": 1,
 "scene": ""
 }
 },
-"scale": 1.0
+"scale": 0.5
 }

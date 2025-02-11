@@ -1,12 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://ccof5jqljbe2h"]
+[gd_scene load_steps=9 format=3 uid="uid://ccof5jqljbe2h"]
 
 [ext_resource type="PackedScene" uid="uid://dugg2lxug1wm6" path="res://TileSet/tile_map.tscn" id="1_8fp0q"]
-[ext_resource type="PackedScene" uid="uid://dltoes2lhnkrd" path="res://Character and Monster tscn/slime.tscn" id="2_bfp4q"]
+[ext_resource type="PackedScene" uid="uid://ba5bfn6da45cq" path="res://Scene/Scene/MobsScene/Slime_Monster.tscn" id="2_ew4kl"]
+[ext_resource type="Script" path="res://Scene/Script/EnvironmentScript/first_swimming_area.gd" id="2_fv0q5"]
+[ext_resource type="PackedScene" uid="uid://bpavamaopisfn" path="res://Scene/Scene/MobsScene/slime_monster_lava.tscn" id="3_dpind"]
 [ext_resource type="PackedScene" uid="uid://yn8waqsf3md8" path="res://Character and Monster tscn/npc.tscn" id="4_mf6uh"]
-[ext_resource type="PackedScene" uid="uid://ph2t6bumjgfb" path="res://Player/Scene/player.tscn" id="5_3bvb7"]
+[ext_resource type="PackedScene" uid="uid://ph2t6bumjgfb" path="res://Scene/Scene/PlayerScene/player.tscn" id="5_3bvb7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mrta1"]
 size = Vector2(1189, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ajb7"]
+size = Vector2(98.9753, 82.5988)
 
 [node name="Game" type="Node2D"]
 process_mode = 1
@@ -25,38 +30,25 @@ process_mode = 1
 position = Vector2(584.5, 0)
 shape = SubResource("RectangleShape2D_mrta1")
 
+[node name="SwimCollisionContainer" type="Node2D" parent="WorldContainer"]
+
+[node name="FirstSwimmingArea" type="Area2D" parent="WorldContainer/SwimCollisionContainer"]
+script = ExtResource("2_fv0q5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldContainer/SwimCollisionContainer/FirstSwimmingArea"]
+position = Vector2(226.957, 280.274)
+scale = Vector2(0.405, 0.405)
+shape = SubResource("RectangleShape2D_2ajb7")
+
 [node name="MobsContainer" type="Node2D" parent="."]
 position = Vector2(0, 4)
 
-[node name="Slime" parent="MobsContainer" instance=ExtResource("2_bfp4q")]
-position = Vector2(1106, 264)
-scale = Vector2(1.335, 1.335)
-collision_layer = 3
-collision_mask = 3
+[node name="SlimeMonster" parent="MobsContainer" instance=ExtResource("2_ew4kl")]
+position = Vector2(508, 310)
+scale = Vector2(4.625, 4.625)
 
-[node name="Slime2" parent="MobsContainer" instance=ExtResource("2_bfp4q")]
-position = Vector2(640, 528)
-scale = Vector2(1.335, 1.335)
-collision_layer = 3
-collision_mask = 3
-
-[node name="Slime3" parent="MobsContainer" instance=ExtResource("2_bfp4q")]
-position = Vector2(738, 377)
-scale = Vector2(1.132, 1.335)
-collision_layer = 3
-collision_mask = 3
-
-[node name="Slime4" parent="MobsContainer" instance=ExtResource("2_bfp4q")]
-position = Vector2(892, 187)
-scale = Vector2(1.335, 1.335)
-collision_layer = 3
-collision_mask = 3
-
-[node name="Slime5" parent="MobsContainer" instance=ExtResource("2_bfp4q")]
-position = Vector2(936, 379)
-scale = Vector2(1.335, 1.335)
-collision_layer = 3
-collision_mask = 3
+[node name="SlimeMonster_Lava" parent="MobsContainer" instance=ExtResource("3_dpind")]
+position = Vector2(351, 208)
 
 [node name="CharacterContainer" type="Node2D" parent="."]
 position = Vector2(79, 38)
@@ -68,7 +60,10 @@ scale = Vector2(1.76, 1.76)
 [node name="Player" parent="CharacterContainer" instance=ExtResource("5_3bvb7")]
 light_mask = 3
 visibility_layer = 3
-position = Vector2(69, 69)
+position = Vector2(-5, 63)
 scale = Vector2(1.755, 1.755)
 collision_layer = 3
 collision_mask = 3
+
+[connection signal="body_entered" from="WorldContainer/SwimCollisionContainer/FirstSwimmingArea" to="WorldContainer/SwimCollisionContainer/FirstSwimmingArea" method="_on_body_entered"]
+[connection signal="body_exited" from="WorldContainer/SwimCollisionContainer/FirstSwimmingArea" to="WorldContainer/SwimCollisionContainer/FirstSwimmingArea" method="_on_body_exited"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://yn8waqsf3md8"]
 
 [ext_resource type="Script" path="res://npc.gd" id="1_g8yl6"]
-[ext_resource type="Texture2D" uid="uid://csx63ay8womgm" path="res://Character and Monster Sprite/npcs.png" id="2_qh2al"]
+[ext_resource type="Texture2D" uid="uid://csx63ay8womgm" path="res://Sprite/NpcSprite/npcs.png" id="2_qh2al"]
 [ext_resource type="PackedScene" uid="uid://bbpal2sbuotkw" path="res://interaction/interaction area/interaction_area.tscn" id="3_8wls2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_pett0"]
