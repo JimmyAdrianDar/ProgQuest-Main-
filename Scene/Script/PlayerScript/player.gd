@@ -18,11 +18,6 @@ func _ready() -> void:
 func _process(delta):
 	input_movement(delta)
 	handle_attack()
-	
-	if is_attacking == true:
-		print("attacking")
-	else:
-		print("not attacking")
 
 func input_movement(delta):
 	var velocity = Vector2.ZERO
