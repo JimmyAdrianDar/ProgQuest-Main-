@@ -5,48 +5,66 @@ extends CharacterBody2D
 @onready var stat_component = $StatComponent
 @onready var attack_component = $AttackComponent
 
-@onready var animation_tree = $AnimationTree
+@onready var animation_tree : AnimationTree = $AnimationTree
 
-var is_swimming
-var is_attacking
-var last_facing_direction := Vector2(0, -1)
+var direction : Vector2 = Vector2.ZERO
 var idle
 
 func _ready() -> void:
+	animation_tree.active = true
 	healthbar.init_health(health_component.check_health())
 
 func _process(delta):
-	input_movement(delta)
+	update_animation_parameters()
 	handle_attack()
 
-func input_movement(delta):
-	var velocity = Vector2.ZERO
+func _physics_process(delta: float) -> void:
+	direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
 	
-	if Input.is_action_pressed("up") || Input.is_action_pressed("ui_w"):
-		velocity.y -= stat_component.Speed
-	if Input.is_action_pressed("down") || Input.is_action_pressed("ui_s"):
-		velocity.y += stat_component.Speed
-	if Input.is_action_pressed("left") || Input.is_action_pressed("ui_a"):
-		velocity.x -= stat_component.Speed
-	if Input.is_action_pressed("right") || Input.is_action_pressed("ui_d"):
-		velocity.x += stat_component.Speed
+	if direction:
+		velocity = direction * stat_component.Speed
+	else:
+		velocity = Vector2.ZERO
 	
-	position += velocity * delta
+	move_and_slide()
 	
-	move_and_collide(Vector2(0,0))
+	#--------Previous Movement Code -------
+	#var velocity = Vector2.ZERO
+	#
+	#if Input.is_action_pressed("up") || Input.is_action_pressed("ui_w"):
+		#velocity.y -= stat_component.Speed
+	#if Input.is_action_pressed("down") || Input.is_action_pressed("ui_s"):
+		#velocity.y += stat_component.Speed
+	#if Input.is_action_pressed("left") || Input.is_action_pressed("ui_a"):
+		#velocity.x -= stat_component.Speed
+	#if Input.is_action_pressed("right") || Input.is_action_pressed("ui_d"):
+		#velocity.x += stat_component.Speed
+	#
+	#position += velocity * delta
+	#
+	#move_and_collide(Vector2(0,0))
+
+func update_animation_parameters():
+	if velocity == Vector2.ZERO:
+		animation_tree["parameters/conditions/idle"] = true
+		animation_tree["parameters/conditions/is_moving"] = false
+	else:
+		animation_tree["parameters/conditions/idle"] = false
+		animation_tree["parameters/conditions/is_moving"] = true
 	
-	if velocity:
-		last_facing_direction = velocity.normalized()
-	
-	idle = !velocity
-	
-	animation_tree.set("parameters/idle/blend_position", last_facing_direction)
-	animation_tree.set("parameters/run/blend_position", last_facing_direction)
-	animation_tree.set("parameters/swim/blend_position", last_facing_direction)
+	if Input.is_action_just_pressed("attack"):
+		animation_tree["parameters/conditions/is_attacking"] = true
+	else:
+		animation_tree["parameters/conditions/is_attacking"] = false
+		
+	if direction != Vector2.ZERO:
+		animation_tree["parameters/Idle/blend_position"] = direction
+		animation_tree["parameters/Walk/blend_position"] = direction
+		animation_tree["parameters/Slash/blend_position"] = direction.x
+		print(direction)
 
 func handle_attack():
 	if Input.is_action_just_pressed("attack"):
-		is_attacking = true
 		attack_component.get_parent_damage(stat_component.Damage)
 
 #func receive_swimming_notification(receive_swimming):
