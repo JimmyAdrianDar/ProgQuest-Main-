@@ -18,7 +18,6 @@ func get_parent_damage(damage: int):
 	damage_value = damage
 
 func _on_body_entered(body: Node2D) -> void:
-	print(body)
 	if body != parent_node:
 		enemy_in_range = true
 		attack_body = body

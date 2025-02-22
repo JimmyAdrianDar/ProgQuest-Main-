@@ -1178,6 +1178,7 @@ shape = SubResource("RectangleShape2D_1hm5h")
 disabled = true
 
 [node name="HitboxComponent" parent="." instance=ExtResource("11_40ofb")]
+stat_component = NodePath("../StatComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
 visible = false

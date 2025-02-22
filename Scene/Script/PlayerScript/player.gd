@@ -18,6 +18,7 @@ func _process(delta):
 	update_animation_parameters()
 	handle_attack()
 
+#Movement mechanics
 func _physics_process(delta: float) -> void:
 	direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
 	
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-	#--------Previous Movement Code -------
+	#-------- Previous Movement Code -------
 	#var velocity = Vector2.ZERO
 	#
 	#if Input.is_action_pressed("up") || Input.is_action_pressed("ui_w"):
@@ -61,7 +62,6 @@ func update_animation_parameters():
 		animation_tree["parameters/Idle/blend_position"] = direction
 		animation_tree["parameters/Walk/blend_position"] = direction
 		animation_tree["parameters/Slash/blend_position"] = direction.x
-		print(direction)
 
 func handle_attack():
 	if Input.is_action_just_pressed("attack"):

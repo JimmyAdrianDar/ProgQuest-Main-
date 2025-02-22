@@ -1,13 +1,12 @@
 join Try center [z_index="2"]
-Try: Hey there! I see you’ve made it through all those quests and challenges. That’s no small feat!
-Try: I can tell you really put in the work. Perseverance like that doesn’t go unnoticed.
-- I’ve learned a lot along the way.
-- I couldn’t have done it without all the challenges pushing me forward.
-Npc: Exactly! Every challenge, every puzzle, it all builds you up. And now, I’ve got something for you, as a token of appreciation.
-- What kind of rewards are we talking about?”
-- I appreciate it, Bob.
-Npc: Some rare items, extra resources, everything you need to keep pushing forward. You’ve earned it
-- I can’t wait to see what you’ve got.
-- Thanks, Bob.
-Npc: You’ve got the right attitude. Now, go and make the most of it! The world’s full of new challenges just waiting for you.
-Npc: You’ve got this. I’ll be cheering you on from here. Keep pushing forward, and you’ll be unstoppable!
+Try: Hello there adventurer, are you perhaps someone who is not into this world?
+- !#$@*$%Y!*%@$@$
+- @$(@!*%&!@&$
+Npc: What did you say? I couldn't understand you
+- @$*(*$()@???
+- @($*&@($&
+Npc: Maybe you need to learn our language named "English".
+- @*$@(*@??
+- @($&@($
+Npc: Ahmm.... Great. Then, you need to go to the adventurer guild to register as an adventurer
+Npc: Goodluck on your journey, Adventurer.

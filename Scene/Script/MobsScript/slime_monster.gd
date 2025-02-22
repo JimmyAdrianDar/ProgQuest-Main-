@@ -13,7 +13,7 @@ var cooldown_timer: Node2D
 func _ready() -> void:
 	healthbar.init_health(health_component.check_health())
 
-func _process(delta: float) -> void:
+func _proces(delta: float) -> void:
 	handle_attack()
 
 func _physics_process(delta: float) -> void:

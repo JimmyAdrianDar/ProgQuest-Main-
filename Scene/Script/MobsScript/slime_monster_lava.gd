@@ -22,7 +22,7 @@ func _physics_process(delta: float) -> void:
 		if position.distance_to(target_body.position) > 10:
 			var direction = (target_body.global_position - global_position).normalized()
 			global_position += direction * stat_component.Speed * delta
-			print(direction)
+			
 			if target_body.global_position.x < global_position.x:
 				print("target x < x")
 				#$AnimatedSprite2D.flip_h = true
@@ -30,7 +30,6 @@ func _physics_process(delta: float) -> void:
 				print("target x > x")
 				#$AnimatedSprite2D.flip_h = false
 		move_and_collide(Vector2(0,0))
-		
 
 func handle_animation_tree():
 	pass

@@ -1190,11 +1190,13 @@ shape = SubResource("CircleShape2D_3q6dn")
 stat_component_path = NodePath("../StatComponent")
 
 [node name="StatComponent" parent="." instance=ExtResource("3_chtk5")]
+Defense = 1
 
 [node name="AttackComponent" parent="." instance=ExtResource("4_4c2ht")]
 stat_component_path = NodePath("../StatComponent")
 
 [node name="HitboxComponent" parent="." instance=ExtResource("5_qd5qv")]
+stat_component = NodePath("../StatComponent")
 
 [node name="Healthbar" parent="." instance=ExtResource("6_y4vnd")]
 offset_left = -10.0
