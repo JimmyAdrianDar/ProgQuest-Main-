@@ -42,6 +42,7 @@ texture = ExtResource("6_ihxeo")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 process_mode = 3
 stream = ExtResource("1_wk4u8")
+volume_db = -63.648
 autoplay = true
 
 [node name="Control" type="Control" parent="."]
@@ -74,29 +75,31 @@ text = "
 
 [node name="Hint" type="Label" parent="Credits"]
 layout_mode = 0
-offset_left = -876.0
-offset_top = 541.0
-offset_right = -701.0
-offset_bottom = 564.0
+offset_left = -874.0
+offset_top = 971.0
+offset_right = -699.0
+offset_bottom = 994.0
 text = "People In Darkness :)"
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -706.0
+offset_right = -1096.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x5iff")
 
 [node name="ProgQuest Logo" type="Panel" parent="Panel"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 77.0
-offset_right = -84.0
-offset_bottom = -441.0
+anchors_preset = -1
+anchor_left = 0.172646
+anchor_right = 0.811659
+anchor_bottom = 0.319444
+offset_left = 34.2105
+offset_top = -16.0
+offset_right = 1.86121
+offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_r4mdx")
@@ -108,12 +111,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -179.5
-offset_top = 118.5
-offset_right = 178.5
-offset_bottom = 423.5
+offset_left = -385.475
+offset_top = 296.0
+offset_right = -58.9953
+offset_bottom = 479.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(2.3, 2.3)
 theme_override_constants/separation = 15
 alignment = 1
 

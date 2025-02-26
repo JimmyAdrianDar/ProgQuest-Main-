@@ -1,20 +1,27 @@
-[gd_scene load_steps=55 format=3 uid="uid://ph2t6bumjgfb"]
+[gd_scene load_steps=62 format=3 uid="uid://ph2t6bumjgfb"]
 
 [ext_resource type="Script" path="res://Scene/Script/PlayerScript/player.gd" id="1_y00a6"]
 [ext_resource type="Texture2D" uid="uid://ybmn2ifu78ld" path="res://Sprite/PlayerSprite/mc idle+run (back rework).png" id="2_2w8eg"]
 [ext_resource type="Texture2D" uid="uid://dbd078o0e8225" path="res://Sprite/PlayerSprite/mc swimmingg (front).png" id="2_48q20"]
 [ext_resource type="Texture2D" uid="uid://dakkjmhfww3im" path="res://Sprite/PlayerSprite/mc idle+run.png" id="2_oyjl2"]
-[ext_resource type="PackedScene" uid="uid://b8f7n82qy7sbu" path="res://Ui.tscn" id="3_415jj"]
 [ext_resource type="Texture2D" uid="uid://dbxdoc8aim4gq" path="res://Sprite/PlayerSprite/mc attack animation+death.png" id="3_yuqmb"]
 [ext_resource type="PackedScene" uid="uid://bxog51hcup8oj" path="res://Character and Monster tscn/healthbar.tscn" id="4_0ural"]
 [ext_resource type="Texture2D" uid="uid://vci3otqqvnnu" path="res://Sprite/PlayerSprite/Picsart_24-10-04_08-04-15-624 (3).png" id="4_bw3mg"]
 [ext_resource type="Texture2D" uid="uid://11v7nj2rsuld" path="res://Sprite/PlayerSprite/mc swimming (back).png" id="7_jceus"]
 [ext_resource type="PackedScene" uid="uid://683t1nywrwk6" path="res://PauseMenu.tscn" id="7_nosbw"]
+[ext_resource type="Script" path="res://Scene/Script/PlayerScript/user_interface_script.gd" id="7_wfms2"]
 [ext_resource type="Texture2D" uid="uid://7pcf7ou7g4e5" path="res://Sprite/PlayerSprite/NeedleWeapon.png" id="8_koo7u"]
 [ext_resource type="PackedScene" uid="uid://ko874n1gwkwk" path="res://Scene/Scene/ComponentScene/stat_component.tscn" id="8_uvgi5"]
 [ext_resource type="PackedScene" uid="uid://buycf6ln4yg5s" path="res://Scene/Scene/ComponentScene/health_component.tscn" id="9_4dw1m"]
 [ext_resource type="PackedScene" uid="uid://df4kx0u4m4ojc" path="res://Scene/Scene/ComponentScene/attack_component.tscn" id="10_jwou0"]
 [ext_resource type="PackedScene" uid="uid://bcylm4m1venn2" path="res://Scene/Scene/ComponentScene/hitbox_component.tscn" id="11_40ofb"]
+[ext_resource type="PackedScene" uid="uid://cuku4dgdcms1" path="res://Scene/Scene/PlayerScene/joystick.tscn" id="12_2y0wx"]
+[ext_resource type="Texture2D" uid="uid://b2k0qcerbjxll" path="res://Sprite/JoystickSprite/attack.png" id="14_k47we"]
+[ext_resource type="Texture2D" uid="uid://dx74r4puwd20a" path="res://Sprite/JoystickSprite/attackpressed.png" id="15_ac8fo"]
+[ext_resource type="Texture2D" uid="uid://dwuymwuaurp0k" path="res://Sprite/JoystickSprite/interact.png" id="16_5sbsj"]
+[ext_resource type="Texture2D" uid="uid://ltxbhsjggs4v" path="res://Miscs Sprite/Settings.png" id="16_h4bop"]
+[ext_resource type="Texture2D" uid="uid://bkdtaw8uyef3v" path="res://Miscs Sprite/Settings Pressed.png" id="17_68rba"]
+[ext_resource type="Texture2D" uid="uid://b1mrv43j20r5g" path="res://Sprite/JoystickSprite/interactpressed.png" id="17_usj4v"]
 
 [sub_resource type="Animation" id="Animation_6o0av"]
 resource_name = "BackRunLeft"
@@ -1130,38 +1137,77 @@ shape = SubResource("CircleShape2D_dw3pn")
 zoom = Vector2(2, 2)
 
 [node name="User Interface Design" type="CanvasLayer" parent="."]
+script = ExtResource("7_wfms2")
 
-[node name="Control" parent="User Interface Design" instance=ExtResource("3_415jj")]
-offset_left = 0.0
-offset_right = 0.0
+[node name="Control" type="Control" parent="User Interface Design"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="HpHolder" type="Sprite2D" parent="User Interface Design"]
+[node name="Pause Menu" parent="User Interface Design/Control" instance=ExtResource("7_nosbw")]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_left = 2.0
+offset_top = 4.0
+offset_right = 2.0
+offset_bottom = 4.0
+
+[node name="HpHolder" type="Sprite2D" parent="User Interface Design/Control"]
 z_index = 2
 texture_filter = 1
-position = Vector2(329.624, 24.375)
-scale = Vector2(11.0231, 3.04688)
+position = Vector2(508.64, 60.728)
+scale = Vector2(15.4815, 4.681)
 texture = ExtResource("4_bw3mg")
 
-[node name="Healthbar" parent="User Interface Design" instance=ExtResource("4_0ural")]
-offset_left = 78.2484
-offset_top = 14.75
-offset_right = 290.249
-offset_bottom = 20.75
-scale = Vector2(2.27, 2.27)
+[node name="Healthbar" parent="User Interface Design/Control" instance=ExtResource("4_0ural")]
+layout_mode = 2
+offset_left = 168.0
+offset_top = 51.0
+offset_right = 396.0
+offset_bottom = 56.0
+scale = Vector2(2.915, 2.915)
 
-[node name="Pause Menu" parent="User Interface Design" instance=ExtResource("7_nosbw")]
-visible = false
-offset_left = 51.0
-offset_right = 51.0
-
-[node name="WeaponHolder" type="Sprite2D" parent="User Interface Design"]
+[node name="WeaponHolder" type="Sprite2D" parent="User Interface Design/Control"]
 texture_filter = 1
-position = Vector2(44, 57)
-scale = Vector2(8.03, 8.03)
+position = Vector2(95.64, 111.28)
+scale = Vector2(14.75, 14.75)
 texture = ExtResource("8_koo7u")
+
+[node name="Joystick" parent="User Interface Design/Control" instance=ExtResource("12_2y0wx")]
+position = Vector2(264.64, 881.28)
+scale = Vector2(2, 2)
+
+[node name="Settings" type="TouchScreenButton" parent="User Interface Design/Control"]
+process_mode = 3
+position = Vector2(1665, 27)
+scale = Vector2(0.215, 0.215)
+texture_normal = ExtResource("16_h4bop")
+texture_pressed = ExtResource("17_68rba")
+action = "settings"
+
+[node name="Attack" type="TouchScreenButton" parent="User Interface Design/Control"]
+texture_filter = 1
+position = Vector2(1388, 568)
+scale = Vector2(1.15, 1.15)
+texture_normal = ExtResource("14_k47we")
+texture_pressed = ExtResource("15_ac8fo")
+action = "attack"
+
+[node name="Interact" type="TouchScreenButton" parent="User Interface Design/Control"]
+visible = false
+position = Vector2(1388, 568)
+scale = Vector2(1.15, 1.15)
+texture_normal = ExtResource("16_5sbsj")
+texture_pressed = ExtResource("17_usj4v")
+action = "interact"
 
 [node name="StatComponent" parent="." instance=ExtResource("8_uvgi5")]
 Damage = 20
+KnockbackModifier = 4.0
 Speed = 200
 Defense = 8
 AttackCooldown = 1.12

@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://bu1eubr1nqoyx"]
+
+[ext_resource type="Texture2D" uid="uid://dxh2e1jtwk3fl" path="res://Sprite/ItemSprite/coins-chests-etc-2-0.png" id="1_gljod"]
+[ext_resource type="Script" path="res://Scene/Script/InventoryScript/inventory_slot_ui.gd" id="2_v8dnc"]
+[ext_resource type="FontFile" uid="uid://6k8134ncmdti" path="res://depixel/DePixelBreit.otf" id="3_00pt1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3y2po"]
+atlas = ExtResource("1_gljod")
+region = Rect2(16, 16, 16, 16)
+
+[node name="InventorySlot" type="Button"]
+texture_filter = 1
+custom_minimum_size = Vector2(16, 16)
+offset_right = 21.085
+offset_bottom = 21.935
+scale = Vector2(2.305, 2.305)
+script = ExtResource("2_v8dnc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_3y2po")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+layout_mode = 1
+offset_left = 3.90456
+offset_top = -3.03688
+offset_right = 22.9045
+offset_bottom = 14.9632
+theme_override_fonts/font = ExtResource("3_00pt1")
+theme_override_font_sizes/font_size = 8
+text = "99"
+horizontal_alignment = 2

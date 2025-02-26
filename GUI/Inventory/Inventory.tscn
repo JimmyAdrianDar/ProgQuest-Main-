@@ -1,0 +1,89 @@
+[gd_scene load_steps=8 format=3 uid="uid://b164704i3q7ca"]
+
+[ext_resource type="Script" path="res://Scene/Script/InventoryScript/inventory.gd" id="1_b456b"]
+[ext_resource type="Texture2D" uid="uid://c0odxg5srnxc6" path="res://Sprite/ItemSprite/Sample-InventorySlotsSet.png" id="1_ot11t"]
+[ext_resource type="PackedScene" uid="uid://bu1eubr1nqoyx" path="res://Scene/Scene/InventorySlotScene/InventorySlot.tscn" id="2_8upyl"]
+[ext_resource type="Script" path="res://Scene/Script/InventoryScript/inventory_ui.gd" id="3_0t23h"]
+[ext_resource type="Resource" uid="uid://dr2274ttbaipg" path="res://Resources/InventoryResources/player_inventory.tres" id="4_pde6t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ypnuo"]
+atlas = ExtResource("1_ot11t")
+region = Rect2(0.133335, 79, 24.8667, 24)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_417ic"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = SubResource("AtlasTexture_ypnuo")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[node name="Inventory" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_b456b")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Parent_canvas" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Parent_canvas"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Parent_canvas"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 604.0
+offset_top = 892.0
+offset_right = 816.0
+offset_bottom = 928.0
+scale = Vector2(3.24, 3.24)
+theme_override_styles/panel = SubResource("StyleBoxTexture_417ic")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Parent_canvas/PanelContainer"]
+layout_mode = 2
+columns = 5
+script = ExtResource("3_0t23h")
+data = ExtResource("4_pde6t")
+
+[node name="InventorySlot" parent="CanvasLayer/Parent_canvas/PanelContainer/GridContainer" instance=ExtResource("2_8upyl")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="CanvasLayer/Parent_canvas/PanelContainer/GridContainer" instance=ExtResource("2_8upyl")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="CanvasLayer/Parent_canvas/PanelContainer/GridContainer" instance=ExtResource("2_8upyl")]
+layout_mode = 2
+
+[node name="ItemDescription" type="Label" parent="CanvasLayer/Parent_canvas"]
+layout_mode = 0
+offset_left = 623.0
+offset_top = 842.0
+offset_right = 887.0
+offset_bottom = 865.0
+text = "Currency that is used in this world"
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Parent_canvas"]
+max_polyphony = 4

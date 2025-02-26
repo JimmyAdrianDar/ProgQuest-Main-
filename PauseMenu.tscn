@@ -71,18 +71,20 @@ script = ExtResource("1_yg6y4")
 
 [node name="BG" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 308.0
-offset_top = 50.0
-offset_right = 842.0
-offset_bottom = 587.0
+offset_left = 577.0
+offset_top = 119.0
+offset_right = 1111.0
+offset_bottom = 656.0
+scale = Vector2(1.475, 1.475)
 theme_override_styles/panel = SubResource("StyleBoxTexture_fppsb")
 
 [node name="Logo" type="Panel" parent="."]
 layout_mode = 2
-offset_left = 456.0
-offset_top = 62.0
-offset_right = 698.0
-offset_bottom = 289.0
+offset_left = 783.0
+offset_top = 135.0
+offset_right = 1025.0
+offset_bottom = 362.0
+scale = Vector2(1.475, 1.475)
 theme_override_styles/panel = SubResource("StyleBoxTexture_558cg")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
@@ -92,10 +94,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -153.0
-offset_top = -130.0
-offset_right = 154.0
-offset_bottom = 195.0
+offset_left = -219.0
+offset_top = -127.0
+offset_right = 267.0
+offset_bottom = 198.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_dp3wa")
@@ -106,9 +108,10 @@ theme_override_constants/separation = 32
 alignment = 1
 
 [node name="Resume" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bnril")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 55
 theme_override_styles/focus = SubResource("StyleBoxTexture_yes8d")
 theme_override_styles/hover = SubResource("StyleBoxFlat_gm7r2")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_lf2kv")
@@ -116,9 +119,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_q800e")
 text = "Resume"
 
 [node name="Restart" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bnril")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 55
 theme_override_styles/focus = SubResource("StyleBoxTexture_yrtks")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1c7qq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7buta")
@@ -126,9 +130,10 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_sfdmy")
 text = "Restart"
 
 [node name="QuitGame" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_bnril")
-theme_override_font_sizes/font_size = 35
+theme_override_font_sizes/font_size = 55
 theme_override_styles/focus = SubResource("StyleBoxTexture_yrtks")
 theme_override_styles/hover = SubResource("StyleBoxFlat_1c7qq")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7buta")

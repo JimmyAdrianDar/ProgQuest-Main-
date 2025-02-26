@@ -1,16 +1,18 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
-@onready var healthbar = $"User Interface Design/Healthbar"
 @onready var health_component = $HealthComponent
 @onready var stat_component = $StatComponent
 @onready var attack_component = $AttackComponent
+@onready var healthbar: ProgressBar = $"User Interface Design/Control/Healthbar"
+@onready var joystick: Node2D = $"User Interface Design/Control/Joystick"
 
 @onready var animation_tree : AnimationTree = $AnimationTree
 
-var direction : Vector2 = Vector2.ZERO
+var direction : Vector2
 var idle
 
 func _ready() -> void:
+	PlayerManager.player = self
 	animation_tree.active = true
 	healthbar.init_health(health_component.check_health())
 
@@ -18,8 +20,18 @@ func _process(delta):
 	update_animation_parameters()
 	handle_attack()
 
-#Movement mechanics
+#Movement Mechanics
 func _physics_process(delta: float) -> void:
+
+#---------Official Movement Code With Joystick-----------
+	#direction = joystick.posVector
+	#if direction:
+		#velocity = direction * stat_component.Speed
+	#else:
+		#velocity = Vector2.ZERO
+	#move_and_slide()
+	
+#-----------Debug Movement Code----------
 	direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
 	
 	if direction:
@@ -27,25 +39,11 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity = Vector2.ZERO
 	
-	move_and_slide()
 	
-	#-------- Previous Movement Code -------
-	#var velocity = Vector2.ZERO
-	#
-	#if Input.is_action_pressed("up") || Input.is_action_pressed("ui_w"):
-		#velocity.y -= stat_component.Speed
-	#if Input.is_action_pressed("down") || Input.is_action_pressed("ui_s"):
-		#velocity.y += stat_component.Speed
-	#if Input.is_action_pressed("left") || Input.is_action_pressed("ui_a"):
-		#velocity.x -= stat_component.Speed
-	#if Input.is_action_pressed("right") || Input.is_action_pressed("ui_d"):
-		#velocity.x += stat_component.Speed
-	#
-	#position += velocity * delta
-	#
-	#move_and_collide(Vector2(0,0))
+	move_and_slide()
 
 func update_animation_parameters():
+	#-----------Animation Tree Conditionals---------
 	if velocity == Vector2.ZERO:
 		animation_tree["parameters/conditions/idle"] = true
 		animation_tree["parameters/conditions/is_moving"] = false
@@ -57,7 +55,8 @@ func update_animation_parameters():
 		animation_tree["parameters/conditions/is_attacking"] = true
 	else:
 		animation_tree["parameters/conditions/is_attacking"] = false
-		
+
+#---------Animation Tree Blend Position-----------
 	if direction != Vector2.ZERO:
 		animation_tree["parameters/Idle/blend_position"] = direction
 		animation_tree["parameters/Walk/blend_position"] = direction
@@ -65,7 +64,7 @@ func update_animation_parameters():
 
 func handle_attack():
 	if Input.is_action_just_pressed("attack"):
-		attack_component.get_parent_damage(stat_component.Damage)
+		attack_component.get_parent_value(stat_component.Damage, stat_component.KnockbackModifier, self.global_position)
 
 #func receive_swimming_notification(receive_swimming):
 	#if receive_swimming != null:
@@ -73,8 +72,13 @@ func handle_attack():
 	#else:
 		#is_swimming = null
 
+#Perform function when hp == 0
 func _on_health_component_died() -> void:
 	pass
 
-func _on_hitbox_component_receive_damage(damage: int) -> void:
+func update_hp(heal_amount):
+	if heal_amount != null:
+		print(heal_amount) 
+
+func _on_hitbox_component_receive_damage(damage: int, knockback) -> void:
 	healthbar.health = health_component.reduce_health(damage)

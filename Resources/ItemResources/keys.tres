@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://dfcpbakbu8ao8"]
+
+[ext_resource type="Script" path="res://Scene/Script/ItemScript/item_data.gd" id="1_ljrht"]
+[ext_resource type="Script" path="res://Scene/Script/ItemEffects/item_effect.gd" id="1_or2wd"]
+[ext_resource type="Texture2D" uid="uid://dxh2e1jtwk3fl" path="res://Sprite/ItemSprite/coins-chests-etc-2-0.png" id="2_6wwiw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u0ric"]
+atlas = ExtResource("2_6wwiw")
+region = Rect2(656, 384, 16, 16)
+
+[resource]
+script = ExtResource("1_ljrht")
+name = "Key"
+description = "Wow you found a key?? Maybe this could open something...."
+texture = SubResource("AtlasTexture_u0ric")
+effects = Array[ExtResource("1_or2wd")]([])
