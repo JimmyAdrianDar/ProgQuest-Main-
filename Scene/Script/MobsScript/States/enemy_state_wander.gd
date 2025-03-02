@@ -1,7 +1,7 @@
 class_name EnemyStateWander extends EnemyState
 
 @export var anim_name : String = "run"
-@export var wander_speed : float = 20.0
+@export var stat_component : Node2D 
 
 @export_category("AI")
 @export var state_animation_duration : float = 0.5
@@ -19,7 +19,7 @@ func enter() -> void:
 	_timer = randi_range(state_cycles_max, state_cycles_max) * state_animation_duration
 	var rand = randi_range(0,3)
 	_direction = enemy.DIR_4[ rand ]
-	enemy.velocity = _direction * wander_speed
+	enemy.velocity = _direction * stat_component.Speed
 	enemy.set_direction(_direction)
 	enemy.update_animation(anim_name)
 	pass

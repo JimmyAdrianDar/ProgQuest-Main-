@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
 @onready var health_component = $HealthComponent
-@onready var stat_component = $StatComponent
+@onready var stat_component: Node2D = $StatComponent
 @onready var attack_component = $AttackComponent
 @onready var healthbar: ProgressBar = $"User Interface Design/Control/Healthbar"
 @onready var joystick: Node2D = $"User Interface Design/Control/Joystick"
@@ -64,7 +64,7 @@ func update_animation_parameters():
 
 func handle_attack():
 	if Input.is_action_just_pressed("attack"):
-		attack_component.get_parent_value(stat_component.Damage, stat_component.KnockbackModifier, self.global_position)
+		attack_component.get_parent_value(stat_component.Damage)
 
 #func receive_swimming_notification(receive_swimming):
 	#if receive_swimming != null:

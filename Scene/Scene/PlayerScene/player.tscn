@@ -1134,7 +1134,7 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_dw3pn")
 
 [node name="Follow Cam" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
+zoom = Vector2(4.46, 4.46)
 
 [node name="User Interface Design" type="CanvasLayer" parent="."]
 script = ExtResource("7_wfms2")
@@ -1146,15 +1146,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="Pause Menu" parent="User Interface Design/Control" instance=ExtResource("7_nosbw")]
-visible = false
-layout_mode = 2
-anchors_preset = 0
-offset_left = 2.0
-offset_top = 4.0
-offset_right = 2.0
-offset_bottom = 4.0
 
 [node name="HpHolder" type="Sprite2D" parent="User Interface Design/Control"]
 z_index = 2
@@ -1178,12 +1169,12 @@ scale = Vector2(14.75, 14.75)
 texture = ExtResource("8_koo7u")
 
 [node name="Joystick" parent="User Interface Design/Control" instance=ExtResource("12_2y0wx")]
-position = Vector2(264.64, 881.28)
-scale = Vector2(2, 2)
+position = Vector2(317, 824)
+scale = Vector2(3.315, 3.315)
 
 [node name="Settings" type="TouchScreenButton" parent="User Interface Design/Control"]
 process_mode = 3
-position = Vector2(1665, 27)
+position = Vector2(2154, 43)
 scale = Vector2(0.215, 0.215)
 texture_normal = ExtResource("16_h4bop")
 texture_pressed = ExtResource("17_68rba")
@@ -1191,7 +1182,7 @@ action = "settings"
 
 [node name="Attack" type="TouchScreenButton" parent="User Interface Design/Control"]
 texture_filter = 1
-position = Vector2(1388, 568)
+position = Vector2(1909, 547)
 scale = Vector2(1.15, 1.15)
 texture_normal = ExtResource("14_k47we")
 texture_pressed = ExtResource("15_ac8fo")
@@ -1199,16 +1190,17 @@ action = "attack"
 
 [node name="Interact" type="TouchScreenButton" parent="User Interface Design/Control"]
 visible = false
-position = Vector2(1388, 568)
+position = Vector2(1909, 544)
 scale = Vector2(1.15, 1.15)
 texture_normal = ExtResource("16_5sbsj")
 texture_pressed = ExtResource("17_usj4v")
 action = "interact"
 
+[node name="Pause Menu" parent="User Interface Design/Control" instance=ExtResource("7_nosbw")]
+layout_mode = 1
+
 [node name="StatComponent" parent="." instance=ExtResource("8_uvgi5")]
 Damage = 20
-KnockbackModifier = 4.0
-Speed = 200
 Defense = 8
 AttackCooldown = 1.12
 

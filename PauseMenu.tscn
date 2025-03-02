@@ -71,18 +71,18 @@ script = ExtResource("1_yg6y4")
 
 [node name="BG" type="Panel" parent="."]
 layout_mode = 0
-offset_left = 577.0
-offset_top = 119.0
-offset_right = 1111.0
-offset_bottom = 656.0
+offset_left = 834.0
+offset_top = 126.0
+offset_right = 1368.0
+offset_bottom = 663.0
 scale = Vector2(1.475, 1.475)
 theme_override_styles/panel = SubResource("StyleBoxTexture_fppsb")
 
 [node name="Logo" type="Panel" parent="."]
 layout_mode = 2
-offset_left = 783.0
+offset_left = 1059.0
 offset_top = 135.0
-offset_right = 1025.0
+offset_right = 1301.0
 offset_bottom = 362.0
 scale = Vector2(1.475, 1.475)
 theme_override_styles/panel = SubResource("StyleBoxTexture_558cg")
