@@ -5,6 +5,8 @@ class_name Player extends CharacterBody2D
 @onready var attack_component = $AttackComponent
 @onready var healthbar: ProgressBar = $"User Interface Design/Control/Healthbar"
 @onready var joystick: Node2D = $"User Interface Design/Control/Joystick"
+@onready var quiz: Control = $"User Interface Design/Quiz"
+@onready var ui_control: Control = $"User Interface Design/Control"
 
 @onready var animation_tree : AnimationTree = $AnimationTree
 
@@ -14,6 +16,7 @@ var idle
 func _ready() -> void:
 	PlayerManager.player = self
 	animation_tree.active = true
+	quiz.visible = false
 	healthbar.init_health(health_component.check_health())
 
 func _process(delta):
@@ -24,23 +27,23 @@ func _process(delta):
 func _physics_process(delta: float) -> void:
 
 #---------Official Movement Code With Joystick-----------
-	#direction = joystick.posVector
-	#if direction:
-		#velocity = direction * stat_component.Speed
-	#else:
-		#velocity = Vector2.ZERO
-	#move_and_slide()
-	
-#-----------Debug Movement Code----------
-	direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
-	
+	direction = joystick.posVector
 	if direction:
 		velocity = direction * stat_component.Speed
 	else:
 		velocity = Vector2.ZERO
-	
-	
 	move_and_slide()
+	
+#-----------Debug Movement Code----------
+	#direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
+	#
+	#if direction:
+		#velocity = direction * stat_component.Speed
+	#else:
+		#velocity = Vector2.ZERO
+	#
+	#
+	#move_and_slide()
 
 func update_animation_parameters():
 	#-----------Animation Tree Conditionals---------
@@ -82,3 +85,13 @@ func update_hp(heal_amount):
 
 func _on_hitbox_component_receive_damage(damage: int, knockback) -> void:
 	healthbar.health = health_component.reduce_health(damage)
+
+func handle_quiz(on_visible : bool):
+	if on_visible == true:
+		quiz.visible = true
+		ui_control.visible = false
+	elif on_visible == false:
+		quiz.visible = false
+		ui_control.visible = true
+	else:
+		print("error in quiz")

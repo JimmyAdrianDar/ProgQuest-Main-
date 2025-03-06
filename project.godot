@@ -78,7 +78,8 @@ folder_colors={
 "res://Resources/": "teal",
 "res://Scene/": "red",
 "res://Sprite/": "red",
-"res://interaction/": "gray"
+"res://interaction/": "gray",
+"res://jsonFile/": "blue"
 }
 
 [global_group]

@@ -39,9 +39,8 @@ func _physics_process(delta: float) -> void:
 	var direction_to_player = (player_position - global_position).normalized()
 	var distance_to_player = global_position.distance_to(player_position)
 	if distance_to_player < 330.0: #300.0 is the camera distance from character to end of pov
-		print("Onsite")
 		if distance_to_player < 150.0:
-			print("On attack Distance")
+			pass
 	
 	#if target_body != null:
 		#if position.distance_to(target_body.position) > 10:

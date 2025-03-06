@@ -1,0 +1,34 @@
+{
+	"questions": [
+		{
+			"question": "Which of the following words is a preposition?",
+			"options": ["Jump", "On", "Happy", "Quickly"],
+			"correct_answer": "On"
+		},
+		{
+			"question": "Which of the following words is a noun?",
+			"options": ["Beautiful", "Quickly", "Happiness", "Jump"],
+			"correct_answer": "Happiness"
+		},
+		{
+			"question": "Which part of speech describes an action?",
+			"options": ["Noun", "Verb", "Adjective", "Pronoun"],
+			"correct_answer": "Verb"
+		},
+		{
+			"question": "Which part of speech replaces a noun?",
+			"options": ["Adjective", "Pronoun", "Verb", "Adverb"],
+			"correct_answer": "Pronoun"
+		},
+		{
+			"question": "Which word is an example of a noun?",
+			"options": ["Run", "Quickly", "Table", "Beautiful"],
+			"correct_answer": "Table"
+		},
+		{
+			"question": "Which part of speech expresses strong emotions?",
+			"options": ["Verb", "Interjection", "Adjective", "Pronoun"],
+			"correct_answer": "Interjection"
+		}
+	]
+}
