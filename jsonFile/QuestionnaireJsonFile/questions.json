@@ -26,7 +26,8 @@
 			"correct_answer": "Table"
 		},
 		{
-			"question": "Which part of speech expresses strong emotions?",
+			"question": "Which part of speech expresses strong 
+			emotions?",
 			"options": ["Verb", "Interjection", "Adjective", "Pronoun"],
 			"correct_answer": "Interjection"
 		}

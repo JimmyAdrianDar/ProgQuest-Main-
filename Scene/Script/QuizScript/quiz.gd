@@ -22,7 +22,6 @@ extends Control
 @onready var panel_container: PanelContainer = $PanelContainer
 @onready var complete_texture: TextureRect = $Complete
 
-
 var questions : Array = []
 var current_question_index = 0
 var correct_answers : String = ""

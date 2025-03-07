@@ -1170,7 +1170,7 @@ scale = Vector2(14.75, 14.75)
 texture = ExtResource("8_koo7u")
 
 [node name="Joystick" parent="User Interface Design/Control" instance=ExtResource("12_2y0wx")]
-position = Vector2(317, 824)
+position = Vector2(385, 817)
 scale = Vector2(3.315, 3.315)
 
 [node name="Settings" type="TouchScreenButton" parent="User Interface Design/Control"]

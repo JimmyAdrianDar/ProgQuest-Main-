@@ -327,6 +327,7 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_0chgy")
 theme_override_styles/normal = SubResource("StyleBoxTexture_4umla")
 
 [node name="Complete" type="TextureRect" parent="."]
+visible = false
 z_index = 2
 texture_filter = 2
 layout_mode = 1
@@ -342,6 +343,7 @@ grow_vertical = 2
 texture = SubResource("AtlasTexture_fftda")
 
 [node name="Exit" type="Button" parent="."]
+visible = false
 z_index = 2
 layout_mode = 0
 offset_left = 968.0
