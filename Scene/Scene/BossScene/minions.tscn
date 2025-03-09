@@ -7,15 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://bxog51hcup8oj" path="res://Character and Monster tscn/healthbar.tscn" id="5_rtioq"]
 [ext_resource type="PackedScene" uid="uid://buycf6ln4yg5s" path="res://Scene/Scene/ComponentScene/health_component.tscn" id="6_flh8u"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_s0m7q"]
-radius = 2.42533
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7y7tq"]
+radius = 4.8669
+height = 18.0478
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qwhu2"]
 radius = 35.8656
 
 [node name="Minions" type="CharacterBody2D"]
 z_index = 5
-scale = Vector2(1.675, 1.675)
+scale = Vector2(1.09, 1.09)
 script = ExtResource("1_51rd3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -25,7 +26,7 @@ hframes = 10
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, 0)
 scale = Vector2(3.05, 3.05)
-shape = SubResource("CircleShape2D_s0m7q")
+shape = SubResource("CapsuleShape2D_7y7tq")
 
 [node name="AnswerLabel" type="Label" parent="."]
 offset_left = -21.9672
@@ -36,7 +37,7 @@ scale = Vector2(0.64, 0.64)
 text = "wdwdwd"
 
 [node name="StatComponent" parent="." instance=ExtResource("3_luo0x")]
-Health = 20
+Health = 40
 
 [node name="HitboxComponent" parent="." instance=ExtResource("4_wvyma")]
 stat_component = NodePath("../StatComponent")

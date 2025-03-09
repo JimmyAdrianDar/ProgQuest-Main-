@@ -17,7 +17,6 @@ func _on_death():
 	died.emit()
 	queue_free()  # Remove minion when killed
 
-
 func _on_hitbox_component_receive_damage(damage: int) -> void:
 	healthbar.health = health_component.reduce_health(damage)
 

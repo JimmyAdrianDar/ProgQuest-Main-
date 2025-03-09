@@ -43,7 +43,7 @@ func summon_minions():
 
 func _on_minion_died(minion):
 	if minion.is_correct:
-		boss.take_damage(10)
+		boss.take_damage(15)
 		waiting_for_answer = false  # Move to damage state
 		await cleanup_minions()  # Wait for all minions to be removed
 

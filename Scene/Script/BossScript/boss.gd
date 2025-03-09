@@ -10,14 +10,17 @@ extends CharacterBody2D
 ]
 
 @onready var enemy_state_machine : EnemyStateMachine = $EnemyStateMachine
+@onready var healthbar: ProgressBar = $CanvasLayer/Healthbar
 
 var health : int = 100
 
 func _ready() -> void:
+	healthbar.init_health(health)
 	enemy_state_machine.initialize(self)
 
 func take_damage(amount):
 	health -= amount
+	healthbar.health = health
 	print(health)
 	if health <= 0:
 		queue_free()

@@ -21,6 +21,7 @@ func _ready() -> void:
 	animation_tree.active = true
 	quiz.visible = false
 	healthbar.init_health(health_component.check_health())
+	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
 
 func _process(delta):
 	update_animation_parameters()
@@ -105,3 +106,7 @@ func handle_book(on_visible : bool):
 		ui_control.visible = false
 	elif on_visible == false:
 		ui_control.visible = true
+
+func _on_spawn(position: Vector2, direction: String):
+	global_position = position
+	

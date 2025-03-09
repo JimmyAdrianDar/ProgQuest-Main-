@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3ex8sme3o36d"]
+[gd_scene load_steps=10 format=3 uid="uid://d3ex8sme3o36d"]
 
 [ext_resource type="Script" path="res://Scene/Script/BossScript/boss.gd" id="1_01pcf"]
 [ext_resource type="Texture2D" uid="uid://tdf7bnih8f6" path="res://Sprite/MobsSprite/LavaSlimeSprite/idle wizard.png" id="1_k51os"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Scene/Script/BossScript/boss_question.gd" id="5_n2fqy"]
 [ext_resource type="PackedScene" uid="uid://cow8mn8kyfy64" path="res://Scene/Scene/BossScene/minions.tscn" id="5_wib4b"]
 [ext_resource type="Script" path="res://Scene/Script/BossScript/boss_damage.gd" id="6_uycix"]
+[ext_resource type="PackedScene" uid="uid://bxog51hcup8oj" path="res://Character and Monster tscn/healthbar.tscn" id="8_aw58j"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p646r"]
 radius = 61.0328
@@ -49,3 +50,21 @@ offset_bottom = -8.0
 scale = Vector2(0.34, 0.34)
 theme_override_font_sizes/font_size = 30
 text = "dwdwdwdwdwddw"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Healthbar" parent="CanvasLayer" instance=ExtResource("8_aw58j")]
+offset_left = 747.0
+offset_top = 968.0
+offset_right = 962.0
+offset_bottom = 976.0
+scale = Vector2(5.17, 5.17)
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+offset_left = 1192.0
+offset_top = 872.0
+offset_right = 1246.0
+offset_bottom = 895.0
+scale = Vector2(3.49, 3.49)
+text = "Wizard
+"
