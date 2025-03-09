@@ -30,6 +30,8 @@ directories/dch_directory={
 "Try": "res://Try.dch"
 }
 directories/dtl_directory={
+"AfterReading": "res://timeline/AfterReading.dtl",
+"AfterSlimeQuest": "res://timeline/AfterSlimeQuest.dtl",
 "Start": "res://Dialogue/Start.dtl",
 "npc": "res://timeline/npc.dtl"
 }
@@ -56,8 +58,9 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
-layout/style_list=[]
-layout/default_style="Default"
+layout/style_list=["res://STYLEDAW.tres"]
+layout/default_style="res://STYLEDAW.tres"
+portraits/default_portrait=""
 
 [display]
 

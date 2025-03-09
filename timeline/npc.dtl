@@ -1,12 +1,14 @@
-join Try center [z_index="2"]
-Try: Hello there adventurer, are you perhaps someone who is not into this world?
+Try: Hello Adventurer! Welcome to the world of Progquest.
 - !#$@*$%Y!*%@$@$
 - @$(@!*%&!@&$
 Npc: What did you say? I couldn't understand you
 - @$*(*$()@???
 - @($*&@($&
-Npc: Maybe you need to learn our language named "English".
+Npc: Are you perhaps not in this world?
 - @*$@(*@??
 - @($&@($
-Npc: Ahmm.... Great. Then, you need to go to the adventurer guild to register as an adventurer
-Npc: Goodluck on your journey, Adventurer.
+Npc: Then, you need to learn our native language called "English"
+- *)Y%*)!@^*^!%*
+- (%&#!)^&%!
+Npc: Okay, That's great. The first step in learning our language is by being familiar with it. Go and kill 5 slimes.
+Npc: Go out adventurer and Goodluck!

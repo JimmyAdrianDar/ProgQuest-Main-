@@ -1,0 +1,141 @@
+[gd_scene load_steps=11 format=3 uid="uid://dtru2uaew4m6b"]
+
+[ext_resource type="Script" path="res://Scene/Script/BookScript/book.gd" id="1_a86cx"]
+[ext_resource type="Texture2D" uid="uid://cx1dh1g1qbsyh" path="res://Sprite/BookSprite/Books updated.png" id="1_b5ryi"]
+[ext_resource type="Texture2D" uid="uid://bsrnf8xjeqmbl" path="res://Sprite/BookSprite/Quest notrif (Updated).png" id="2_3yfkl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yguhw"]
+atlas = ExtResource("1_b5ryi")
+region = Rect2(269, 109, 200, 127)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p2u0h"]
+atlas = ExtResource("2_3yfkl")
+region = Rect2(375, 200, 97, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vorjp"]
+texture = SubResource("AtlasTexture_p2u0h")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2n07"]
+atlas = ExtResource("2_3yfkl")
+region = Rect2(375, 200, 97, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n5yhb"]
+texture = SubResource("AtlasTexture_r2n07")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4slct"]
+atlas = ExtResource("2_3yfkl")
+region = Rect2(375, 200, 97, 100)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kik1j"]
+texture = SubResource("AtlasTexture_4slct")
+
+[node name="Book" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_a86cx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 93.0
+offset_top = 42.0
+offset_right = 93.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.925, 0.925)
+texture = SubResource("AtlasTexture_yguhw")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_left = 333.0
+offset_top = 69.0
+offset_right = 1096.0
+offset_bottom = 803.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 98
+text = "Part of speech
+"
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_left = 360.0
+offset_top = 225.0
+offset_right = 1123.0
+offset_bottom = 959.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Verb -  A word used to describe an
+ action, state, or occurrence, and 
+forming the main part of the 
+predicate of a sentence, such as 
+hear, become, happen.
+
+Example:
+The cat jumped over the fence.
+She sings beautifully."
+
+[node name="Label4" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_left = 1271.0
+offset_top = 141.0
+offset_right = 2092.0
+offset_bottom = 875.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Noun - A word that names 
+something, such as a person, 
+place, thing, or idea.
+
+Example:
+The park is my favorite place to 
+relax and read a book.
+The dog barked loudly at the 
+stranger."
+
+[node name="Label5" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_left = 1370.0
+offset_top = 502.0
+offset_right = 2191.0
+offset_bottom = 1236.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "park
+
+dog"
+
+[node name="Label3" type="Label" parent="."]
+texture_filter = 2
+layout_mode = 0
+offset_left = 356.0
+offset_top = 730.0
+offset_right = 1177.0
+offset_bottom = 1464.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "               jumped
+        sings"
+
+[node name="Next" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1987.0
+offset_top = 781.0
+offset_right = 2074.0
+offset_bottom = 888.0
+theme_override_styles/hover = SubResource("StyleBoxTexture_vorjp")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_n5yhb")
+theme_override_styles/normal = SubResource("StyleBoxTexture_kik1j")
+
+[connection signal="pressed" from="Next" to="." method="_on_next_pressed"]

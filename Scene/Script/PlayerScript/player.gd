@@ -7,6 +7,9 @@ class_name Player extends CharacterBody2D
 @onready var joystick: Node2D = $"User Interface Design/Control/Joystick"
 @onready var quiz: Control = $"User Interface Design/Quiz"
 @onready var ui_control: Control = $"User Interface Design/Control"
+@onready var book_1: book = $"User Interface Design/Book"
+@onready var book_2: Control = $"User Interface Design/Book2"
+@onready var book_3: Control = $"User Interface Design/Book3"
 
 @onready var animation_tree : AnimationTree = $AnimationTree
 
@@ -95,3 +98,10 @@ func handle_quiz(on_visible : bool):
 		ui_control.visible = true
 	else:
 		print("error in quiz")
+
+func handle_book(on_visible : bool):
+	if on_visible == true:
+		book_1.visible = true
+		ui_control.visible = false
+	elif on_visible == false:
+		ui_control.visible = true
