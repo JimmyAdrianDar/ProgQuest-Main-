@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://cow8mn8kyfy64"]
+
+[ext_resource type="Texture2D" uid="uid://tdf7bnih8f6" path="res://Sprite/MobsSprite/LavaSlimeSprite/idle wizard.png" id="1_5o5by"]
+[ext_resource type="Script" path="res://Scene/Script/BossScript/minions.gd" id="1_51rd3"]
+[ext_resource type="PackedScene" uid="uid://ko874n1gwkwk" path="res://Scene/Scene/ComponentScene/stat_component.tscn" id="3_luo0x"]
+[ext_resource type="PackedScene" uid="uid://bcylm4m1venn2" path="res://Scene/Scene/ComponentScene/hitbox_component.tscn" id="4_wvyma"]
+[ext_resource type="PackedScene" uid="uid://bxog51hcup8oj" path="res://Character and Monster tscn/healthbar.tscn" id="5_rtioq"]
+[ext_resource type="PackedScene" uid="uid://buycf6ln4yg5s" path="res://Scene/Scene/ComponentScene/health_component.tscn" id="6_flh8u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s0m7q"]
+radius = 2.42533
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qwhu2"]
+radius = 35.8656
+
+[node name="Minions" type="CharacterBody2D"]
+z_index = 5
+scale = Vector2(1.675, 1.675)
+script = ExtResource("1_51rd3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_5o5by")
+hframes = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0)
+scale = Vector2(3.05, 3.05)
+shape = SubResource("CircleShape2D_s0m7q")
+
+[node name="AnswerLabel" type="Label" parent="."]
+offset_left = -21.9672
+offset_top = -44.2623
+offset_right = 48.0328
+offset_bottom = -21.2623
+scale = Vector2(0.64, 0.64)
+text = "wdwdwd"
+
+[node name="StatComponent" parent="." instance=ExtResource("3_luo0x")]
+Health = 20
+
+[node name="HitboxComponent" parent="." instance=ExtResource("4_wvyma")]
+stat_component = NodePath("../StatComponent")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("CircleShape2D_qwhu2")
+
+[node name="Healthbar" parent="." instance=ExtResource("5_rtioq")]
+offset_left = -22.6866
+offset_top = 31.0448
+offset_right = 18.3134
+offset_bottom = 33.0448
+
+[node name="HealthComponent" parent="." instance=ExtResource("6_flh8u")]
+stat_component_path = NodePath("../StatComponent")
+
+[connection signal="receive_damage" from="HitboxComponent" to="." method="_on_hitbox_component_receive_damage"]
+[connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

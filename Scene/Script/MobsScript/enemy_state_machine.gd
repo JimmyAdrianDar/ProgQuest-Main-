@@ -16,7 +16,7 @@ func _physics_process(delta):
 	change_state(current_state.physics(delta))
 	pass
 
-func initialize(_enemy : LavaSlime) -> void:
+func initialize(_enemy : Node2D) -> void:
 	states = []
 	
 	for c in get_children():

@@ -119,6 +119,7 @@ _data = {
 }
 
 [node name="Npc" type="Node2D"]
+z_index = 7
 script = ExtResource("1_g8yl6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

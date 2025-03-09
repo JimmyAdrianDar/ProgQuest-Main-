@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ccof5jqljbe2h"]
+[gd_scene load_steps=10 format=3 uid="uid://ccof5jqljbe2h"]
 
 [ext_resource type="PackedScene" uid="uid://cyts0bie800dk" path="res://TileSet/main_map.tscn" id="2_t60en"]
 [ext_resource type="PackedScene" uid="uid://bpavamaopisfn" path="res://Scene/Scene/MobsScene/slime_monster_lava.tscn" id="3_hvgyi"]
@@ -8,6 +8,7 @@
 [ext_resource type="Resource" uid="uid://c3ft3ehnid631" path="res://Resources/ItemResources/coins.tres" id="6_oyuvs"]
 [ext_resource type="Resource" uid="uid://bnupt2kjp3f0l" path="res://Resources/ItemResources/gems.tres" id="7_rexfn"]
 [ext_resource type="Resource" uid="uid://dfcpbakbu8ao8" path="res://Resources/ItemResources/keys.tres" id="8_cgaxs"]
+[ext_resource type="PackedScene" uid="uid://d3ex8sme3o36d" path="res://Scene/Scene/BossScene/boss.tscn" id="9_ge6ng"]
 
 [node name="Game" type="Node2D"]
 process_mode = 1
@@ -17,8 +18,7 @@ position = Vector2(19, 7)
 position = Vector2(79, 38)
 
 [node name="Npc" parent="CharacterContainer" instance=ExtResource("4_mf6uh")]
-z_index = 4
-position = Vector2(587, 338)
+position = Vector2(529, 302)
 scale = Vector2(1.76, 1.76)
 
 [node name="Player" parent="CharacterContainer" instance=ExtResource("5_3bvb7")]
@@ -80,3 +80,7 @@ item_data = ExtResource("7_rexfn")
 visible = false
 position = Vector2(657, 150)
 item_data = ExtResource("8_cgaxs")
+
+[node name="Boss" parent="." instance=ExtResource("9_ge6ng")]
+z_index = 12
+position = Vector2(689, 1212)

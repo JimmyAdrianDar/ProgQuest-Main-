@@ -1,17 +1,51 @@
-[gd_scene load_steps=3 format=3 uid="uid://c85cylm4ywcoq"]
+[gd_scene load_steps=9 format=3 uid="uid://d3ex8sme3o36d"]
 
-[ext_resource type="Texture2D" uid="uid://bjeg02tspxgaj" path="res://Sprite/MobsSprite/Golem idle (1).png" id="1_og87a"]
+[ext_resource type="Script" path="res://Scene/Script/BossScript/boss.gd" id="1_01pcf"]
+[ext_resource type="Texture2D" uid="uid://tdf7bnih8f6" path="res://Sprite/MobsSprite/LavaSlimeSprite/idle wizard.png" id="1_k51os"]
+[ext_resource type="Script" path="res://Scene/Script/MobsScript/enemy_state_machine.gd" id="2_72jwt"]
+[ext_resource type="Script" path="res://Scene/Script/BossScript/boss_idle.gd" id="3_v60wi"]
+[ext_resource type="Script" path="res://Scene/Script/BossScript/boss_question.gd" id="5_n2fqy"]
+[ext_resource type="PackedScene" uid="uid://cow8mn8kyfy64" path="res://Scene/Scene/BossScene/minions.tscn" id="5_wib4b"]
+[ext_resource type="Script" path="res://Scene/Script/BossScript/boss_damage.gd" id="6_uycix"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_womxo"]
-radius = 72.47
+[sub_resource type="CircleShape2D" id="CircleShape2D_p646r"]
+radius = 61.0328
 
 [node name="Boss" type="CharacterBody2D"]
+script = ExtResource("1_01pcf")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(1, 67)
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("1_og87a")
-hframes = 3
+texture_filter = 1
+scale = Vector2(2.76, 2.76)
+texture = ExtResource("1_k51os")
+hframes = 10
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("2_72jwt")
+
+[node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("after_idle_state")]
+script = ExtResource("3_v60wi")
+after_idle_state = NodePath("../Question")
+
+[node name="Question" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("boss", "damage_state")]
+script = ExtResource("5_n2fqy")
+boss = NodePath("../..")
+minion_scene = ExtResource("5_wib4b")
+damage_state = NodePath("../Damage")
+
+[node name="Damage" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("idle_state")]
+script = ExtResource("6_uycix")
+idle_state = NodePath("../Idle")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_womxo")
+position = Vector2(-13, 1)
+shape = SubResource("CircleShape2D_p646r")
+
+[node name="QuestionLabel" type="Label" parent="."]
+offset_left = -105.0
+offset_top = -96.0
+offset_right = 386.0
+offset_bottom = -8.0
+scale = Vector2(0.34, 0.34)
+theme_override_font_sizes/font_size = 30
+text = "dwdwdwdwdwddw"
