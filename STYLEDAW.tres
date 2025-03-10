@@ -31,9 +31,9 @@ script = ExtResource("1_24ldw")
 scene = ExtResource("5_2hgfm")
 overrides = {
 "box_panel": "\"vn_textbox_default_panel.tres\"",
-"box_size": "Vector2(1000, 450)",
+"box_size": "Vector2(750, 350)",
 "name_label_custom_font_size": "100.0",
-"text_size": "45.0"
+"text_size": "100.0"
 }
 
 [sub_resource type="Resource" id="Resource_4v2f5"]
@@ -63,4 +63,4 @@ script = ExtResource("10_xpf1j")
 name = "STYLEDAW"
 base_overrides = {}
 layers = Array[ExtResource("1_24ldw")]([SubResource("Resource_h32vh"), SubResource("Resource_vyr0j"), SubResource("Resource_vxkxr"), SubResource("Resource_kwtla"), SubResource("Resource_4v2f5"), SubResource("Resource_uvw14"), SubResource("Resource_r7qs5"), SubResource("Resource_1g46b")])
-metadata/_latest_layer = 5
+metadata/_latest_layer = 3

@@ -31,23 +31,23 @@ func _process(delta):
 func _physics_process(delta: float) -> void:
 
 #---------Official Movement Code With Joystick-----------
-	#direction = joystick.posVector
-	#if direction:
-		#velocity = direction * stat_component.Speed
-	#else:
-		#velocity = Vector2.ZERO
-	#move_and_slide()
-	
-#-----------Debug Movement Code----------
-	direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
-	
+	direction = joystick.posVector
 	if direction:
 		velocity = direction * stat_component.Speed
 	else:
 		velocity = Vector2.ZERO
-	
-	
 	move_and_slide()
+	
+#-----------Debug Movement Code----------
+	#direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
+	#
+	#if direction:
+		#velocity = direction * stat_component.Speed
+	#else:
+		#velocity = Vector2.ZERO
+	#
+	
+	#move_and_slide()
 
 func update_animation_parameters():
 	#-----------Animation Tree Conditionals---------
@@ -87,7 +87,7 @@ func update_hp(heal_amount):
 	if heal_amount != null:
 		print(heal_amount) 
 
-func _on_hitbox_component_receive_damage(damage: int, knockback) -> void:
+func _on_hitbox_component_receive_damage(damage: int) -> void:
 	healthbar.health = health_component.reduce_health(damage)
 
 func handle_quiz(on_visible : bool):
@@ -107,6 +107,7 @@ func handle_book(on_visible : bool):
 	elif on_visible == false:
 		ui_control.visible = true
 
+#Handles door system spawn
 func _on_spawn(position: Vector2, direction: String):
 	global_position = position
 	

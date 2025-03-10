@@ -23,8 +23,6 @@ func _on_interact():
 	elif interact_count == 3:
 		Dialogic.start("AfterReading")
 		return
-	elif interact_count == 4:
-		PlayerManager.player.handle_quiz(true)
 
 func _on_tiimeline_ended():
 	interact_count += 1

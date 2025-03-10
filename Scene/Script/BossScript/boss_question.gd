@@ -46,6 +46,8 @@ func _on_minion_died(minion):
 		boss.take_damage(15)
 		waiting_for_answer = false  # Move to damage state
 		await cleanup_minions()  # Wait for all minions to be removed
+	else:
+		PlayerManager.player._on_hitbox_component_receive_damage(10)
 
 func cleanup_minions():
 	for minion in minions:
