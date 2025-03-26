@@ -32,7 +32,6 @@ func initialize(_enemy : Node2D) -> void:
 		change_state(states[0])
 		process_mode = Node.PROCESS_MODE_INHERIT
 	pass
-	
 
 func change_state(new_state : EnemyState) -> void:
 	#Checking if the state is not null and if the new state is not the same of the current state

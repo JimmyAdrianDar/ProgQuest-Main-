@@ -36,4 +36,5 @@ func _on_enemy_destroyed() -> void:
 	state_machine.change_state(self)
 
 func _on_animation_finished( _a : String ) -> void:
+	PlayerManager.player.player_slime_killed(1)
 	enemy.queue_free()

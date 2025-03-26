@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://ce26gyolr7528"]
+
+[ext_resource type="Script" path="res://Scene/Script/QuestScript/quest_item.gd" id="1_1w5rm"]
+
+[node name="QuestItem" type="Button"]
+custom_minimum_size = Vector2(600, 300)
+text_overrun_behavior = 3
+autowrap_mode = 1
+script = ExtResource("1_1w5rm")
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 569.0
+offset_bottom = 180.0
+theme_override_font_sizes/font_size = 25
+text = "Quest Description / Title"
+autowrap_mode = 1
+text_overrun_behavior = 3
+
+[node name="StepLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 203.0
+offset_right = 571.0
+offset_bottom = 288.0
+theme_override_font_sizes/font_size = 25
+text = "Things to do in the quest"
+autowrap_mode = 1
+text_overrun_behavior = 3

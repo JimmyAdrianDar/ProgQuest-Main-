@@ -1,25 +1,38 @@
-[gd_scene load_steps=8 format=3 uid="uid://b164704i3q7ca"]
+[gd_scene load_steps=13 format=3 uid="uid://b164704i3q7ca"]
 
 [ext_resource type="Script" path="res://Scene/Script/InventoryScript/inventory.gd" id="1_b456b"]
-[ext_resource type="Texture2D" uid="uid://c0odxg5srnxc6" path="res://Sprite/ItemSprite/Sample-InventorySlotsSet.png" id="1_ot11t"]
 [ext_resource type="PackedScene" uid="uid://bu1eubr1nqoyx" path="res://Scene/Scene/InventorySlotScene/InventorySlot.tscn" id="2_8upyl"]
+[ext_resource type="Texture2D" uid="uid://bp18kwjbwob87" path="res://Sprite/ItemSprite/2-removebg-preview.png" id="2_hdy1q"]
+[ext_resource type="Texture2D" uid="uid://bqn6v82vakdmp" path="res://Sprite/ItemSprite/3-removebg-preview.png" id="2_s4fsy"]
 [ext_resource type="Script" path="res://Scene/Script/InventoryScript/inventory_ui.gd" id="3_0t23h"]
+[ext_resource type="Script" path="res://GUI/Inventory/exitbutton.gd" id="3_211m3"]
 [ext_resource type="Resource" uid="uid://dr2274ttbaipg" path="res://Resources/InventoryResources/player_inventory.tres" id="4_pde6t"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ypnuo"]
-atlas = ExtResource("1_ot11t")
-region = Rect2(0.133335, 79, 24.8667, 24)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqg8i"]
+atlas = ExtResource("2_s4fsy")
+region = Rect2(370, 109, 217, 301)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sumcg"]
+atlas = ExtResource("2_hdy1q")
+region = Rect2(29, 27, 540, 369)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_417ic"]
-content_margin_left = 10.0
-content_margin_top = 10.0
+content_margin_left = 20.0
+content_margin_top = 14.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
-texture = SubResource("AtlasTexture_ypnuo")
+texture = SubResource("AtlasTexture_sumcg")
 texture_margin_left = 14.0
 texture_margin_top = 14.0
 texture_margin_right = 14.0
 texture_margin_bottom = 14.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwljl"]
+atlas = ExtResource("2_s4fsy")
+region = Rect2(228, 15, 130, 132)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ethso"]
+texture = SubResource("AtlasTexture_dwljl")
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -31,6 +44,14 @@ grow_vertical = 2
 script = ExtResource("1_b456b")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+z_index = 1
+offset_left = 1207.0
+offset_top = 159.0
+offset_right = 1693.0
+offset_bottom = 898.0
+texture = SubResource("AtlasTexture_wqg8i")
 
 [node name="Parent_canvas" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -54,11 +75,11 @@ grow_vertical = 2
 [node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Parent_canvas"]
 texture_filter = 1
 layout_mode = 0
-offset_left = 604.0
-offset_top = 892.0
-offset_right = 816.0
-offset_bottom = 928.0
-scale = Vector2(3.24, 3.24)
+offset_left = 563.0
+offset_top = 61.0
+offset_right = 817.0
+offset_bottom = 249.0
+scale = Vector2(5, 5)
 theme_override_styles/panel = SubResource("StyleBoxTexture_417ic")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/Parent_canvas/PanelContainer"]
@@ -77,6 +98,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="ItemDescription" type="Label" parent="CanvasLayer/Parent_canvas"]
+visible = false
 layout_mode = 0
 offset_left = 623.0
 offset_top = 842.0
@@ -84,6 +106,17 @@ offset_right = 887.0
 offset_bottom = 865.0
 text = "Currency that is used in this world"
 autowrap_mode = 2
+
+[node name="Button" type="Button" parent="CanvasLayer/Parent_canvas"]
+z_index = 1
+layout_mode = 0
+offset_left = 1685.0
+offset_top = 125.0
+offset_right = 1693.0
+offset_bottom = 133.0
+scale = Vector2(7.085, 7.085)
+theme_override_styles/normal = SubResource("StyleBoxTexture_ethso")
+script = ExtResource("3_211m3")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer/Parent_canvas"]
 max_polyphony = 4

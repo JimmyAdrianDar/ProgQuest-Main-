@@ -19,22 +19,24 @@ config/features=PackedStringArray("4.3", "Mobile")
 BgMusic="*res://MainMenu.tscn"
 SettingScene="*res://SettingScene.tscn"
 Global="*res://global.gd"
-Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 InteractionManager="*res://interaction/InteractionManager.tscn"
 PlayerManager="*res://00_Globals/global_player_manager.gd"
 NavigationManager="*res://00_Globals/navigation_manager.gd"
+QuestManager="*res://Scene/Script/QuestScript/global_quest_manager.gd"
+Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+UserInterfaceScript="res://Scene/Script/PlayerScript/user_interface_script.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"Npc": "res://Character(Dialogic)/Npc.dch",
-"Try": "res://Try.dch"
+"Bob": "res://Dialogue/DialogueCharacter/Bob.dch",
+"marcos": "res://Dialogue/DialogueCharacter/marcos.dch"
 }
 directories/dtl_directory={
-"AfterReading": "res://timeline/AfterReading.dtl",
-"AfterSlimeQuest": "res://timeline/AfterSlimeQuest.dtl",
-"Start": "res://Dialogue/Start.dtl",
-"npc": "res://timeline/npc.dtl"
+"BobDoneQuest": "res://Dialogue/DialogueTimeline/BobDoneQuest.dtl",
+"BobOnTheTreesQuest": "res://Dialogue/DialogueTimeline/BobOnTheTreesQuest.dtl",
+"BobStartingQuest": "res://Dialogue/DialogueTimeline/BobStartingQuest.dtl",
+"marcosdialogue": "res://Dialogue/DialogueTimeline/marcosdialogue.dtl"
 }
 variables={
 "Respond(Travelling)": ""
@@ -59,8 +61,8 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
-layout/style_list=["res://STYLEDAW.tres"]
-layout/default_style="res://STYLEDAW.tres"
+layout/style_list=["res://Dialogue/StyleDialogue/CustomStyle.tres"]
+layout/default_style="res://Dialogue/StyleDialogue/CustomStyle.tres"
 portraits/default_portrait=""
 
 [display]
@@ -80,8 +82,8 @@ folder_colors={
 "res://Animation/": "red",
 "res://Miscs Sprite/": "gray",
 "res://Resources/": "teal",
-"res://Scene/": "red",
-"res://Sprite/": "red",
+"res://Scene/": "blue",
+"res://Sprite/": "blue",
 "res://interaction/": "gray",
 "res://jsonFile/": "blue"
 }
@@ -122,6 +124,10 @@ interact={
 "deadzone": 0.5,
 "events": []
 }
+bag={
+"deadzone": 0.5,
+"events": []
+}
 ui_a={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":97,"location":0,"echo":false,"script":null)
@@ -156,6 +162,15 @@ ui_e={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
 ]
 }
+ui_p={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
+]
+}
+exit={
+"deadzone": 0.5,
+"events": []
+}
 
 [input_devices]
 
@@ -173,5 +188,6 @@ pointing/emulate_touch_from_mouse=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
+textures/canvas_textures/default_texture_repeat=1
 renderer/rendering_method="mobile"
 textures/vram_compression/import_etc2_astc=true

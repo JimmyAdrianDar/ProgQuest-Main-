@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://jnpciuqq0jwf"]
+
+[ext_resource type="Texture2D" uid="uid://csx63ay8womgm" path="res://Sprite/NpcSprite/npcs.png" id="1_8fuv7"]
+[ext_resource type="Script" path="res://Character and Monster tscn/marcos.gd" id="1_w4qts"]
+[ext_resource type="PackedScene" uid="uid://bbpal2sbuotkw" path="res://interaction/interaction area/interaction_area.tscn" id="3_bwdyo"]
+[ext_resource type="PackedScene" uid="uid://dtru2uaew4m6b" path="res://Scene/Scene/BookScene/book.tscn" id="4_2cniy"]
+[ext_resource type="PackedScene" uid="uid://c41gvnlmlofoj" path="res://Scene/Scene/BookScene/book_2.tscn" id="5_6itug"]
+[ext_resource type="PackedScene" uid="uid://unfd3h7ip0yf" path="res://Scene/Scene/BookScene/book_3.tscn" id="6_lhswt"]
+[ext_resource type="PackedScene" uid="uid://bgqh1g1swhxnc" path="res://Scene/Scene/BookScene/book_4.tscn" id="7_2faah"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kopq0"]
+radius = 25.4951
+
+[node name="Marcos" type="Node2D"]
+script = ExtResource("1_w4qts")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -6)
+texture = ExtResource("1_8fuv7")
+vframes = 2
+frame = 1
+
+[node name="InteractionArea" parent="." instance=ExtResource("3_bwdyo")]
+action_name = "Marcos"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
+shape = SubResource("CircleShape2D_kopq0")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Book" parent="CanvasLayer" instance=ExtResource("4_2cniy")]
+visible = false
+z_index = 3
+book_2 = NodePath("../Book2")
+
+[node name="Book2" parent="CanvasLayer" instance=ExtResource("5_6itug")]
+visible = false
+z_index = 3
+book_3 = NodePath("../Book3")
+
+[node name="Book3" parent="CanvasLayer" instance=ExtResource("6_lhswt")]
+visible = false
+z_index = 3
+book_4 = NodePath("../Book4")
+
+[node name="Book4" parent="CanvasLayer" instance=ExtResource("7_2faah")]
+visible = false
+z_index = 3

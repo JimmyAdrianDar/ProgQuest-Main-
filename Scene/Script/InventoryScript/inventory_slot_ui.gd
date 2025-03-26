@@ -5,7 +5,6 @@ var slot_data : SlotData : set = set_slot_data
 @onready var label: Label = $Label
 @onready var inventory: Control = $"../../../../.."
 
-
 func _ready() -> void:
 	texture_rect.texture = null
 	label.text = ""
@@ -30,6 +29,7 @@ func item_unfocused() -> void:
 	inventory.update_item_description( "" )
 	pass
 
+#Responsible for usability of items
 func item_pressed() -> void:
 	if slot_data:
 		if slot_data.item_data:

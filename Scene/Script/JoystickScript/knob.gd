@@ -23,10 +23,16 @@ func _process(delta: float) -> void:
 		global_position = lerp(global_position, parent.global_position, delta * 10)
 		parent.posVector = Vector2(0,0)
 func calculateVector():
-	if abs((global_position.x - parent.global_position.x)) >= deadZone:
-		parent.posVector.x = (global_position.x - parent.global_position.x) / maxLength
-	if abs((global_position.y - parent.global_position.y)) >= deadZone:
-		parent.posVector.y = (global_position.y - parent.global_position.y) / maxLength
+	var raw_vector = Vector2(
+		(global_position.x - parent.global_position.x) / maxLength,
+		(global_position.y - parent.global_position.y) / maxLength
+	)
+	
+	# Determine the dominant direction
+	if abs(raw_vector.x) > abs(raw_vector.y):
+		parent.posVector = Vector2(raw_vector.x, 0)  # Snap to horizontal
+	else:
+		parent.posVector = Vector2(0, raw_vector.y)  # Snap to vertical
 
 func _on_button_button_down() -> void:
 	pressing = true

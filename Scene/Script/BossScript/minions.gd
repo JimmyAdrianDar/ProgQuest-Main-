@@ -1,4 +1,16 @@
-extends CharacterBody2D
+class_name Minion extends CharacterBody2D
+#
+#@export var answer_text: String
+#@export var correct_answer: String
+#@export var boss: MageBoss
+#
+#func _on_death():
+	#if answer_text == correct_answer:
+		#boss.take_damage(10)
+	#else:
+		#print("Player takes damage!")
+	#queue_free()
+
 
 @onready var healthbar: ProgressBar = $Healthbar
 @onready var health_component: Node2D = $HealthComponent
