@@ -40,17 +40,17 @@ func _process(delta):
 #Movement Mechanics
 func _physics_process(delta: float) -> void:
 #---------Official Movement Code With Joystick-----------
-	direction = joystick.posVector
-	##print(direction)
-	if direction:
-		direction = direction.normalized()
-		velocity = direction * stat_component.Speed
-	else:
-		velocity = Vector2.ZERO
+	#direction = joystick.posVector
+	###print(direction)
+	#if direction:
+		#direction = direction.normalized()
+		#velocity = direction * stat_component.Speed
+	#else:
+		#velocity = Vector2.ZERO
 	#move_and_slide()
 	
 #-----------Debug Movement Code----------
-	#direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
+	direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
 	#if direction:
 		#velocity = direction * stat_component.Speed
 	#else:

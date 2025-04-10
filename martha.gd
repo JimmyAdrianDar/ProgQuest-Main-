@@ -5,6 +5,7 @@ signal give_quest
 @onready var interactive_area: InteractionArea = $InteractionArea 
 @onready var sprite = $Sprite2D
 @onready var player: Player = $"../Player"
+@onready var is_quest_complete: PersistentDataHandler = $IsQuestComplete
 
 var active_timeline : String = ""
 var interact_count : int = 0
@@ -13,6 +14,10 @@ var interact_count : int = 0
 func _ready() -> void:
 	interactive_area.interact = Callable(self, "_on_interact")
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
+	is_quest_complete.data_loaded.connect(set_quest_state)
+
+func set_quest_state() -> void:
+	pass
 
 func _on_interact():
 	if interact_count == 0:
@@ -28,6 +33,7 @@ func _on_timeline_ended():
 		PlayerManager.player.dialogue_ui_visibility(true)
 		active_timeline = ""
 		
+		is_quest_complete.set_value()
 		
 		GameEvent.martha_quest_finished.emit(true)
 		print("Martha emitted quest finished")

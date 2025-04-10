@@ -26,6 +26,7 @@ QuestManager="*res://Scene/Script/QuestScript/global_quest_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 UserInterfaceScript="res://Scene/Script/PlayerScript/user_interface_script.gd"
 GameEvent="*res://00_Globals/GameEvent.gd"
+SaveManager="*res://00_Globals/global_save_manager.gd"
 
 [dialogic]
 
