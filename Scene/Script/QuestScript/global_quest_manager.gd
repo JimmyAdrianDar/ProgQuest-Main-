@@ -50,7 +50,8 @@ func update_quest( _title : String, _completed_step : String = "", _is_complete 
 		# Display a notification that quests was updated OR completed
 		if q.is_complete == true:
 			#PlayerHud.queue_notification( "Quest Complete!", _title )
-			disperse_quest_rewards( find_quest_by_title( _title ) )
+			#disperse_quest_rewards( find_quest_by_title( _title ) )
+			pass
 			#
 		#else:
 			#PlayerHud.queue_notification( "Quest Updated", _title + ": " + _completed_step )
@@ -64,16 +65,16 @@ func gather_quest_data() -> void:
 		pass
 	pass
 
-func disperse_quest_rewards( _q : Quest ) -> void:
-	# Give XP and item rewards to player
-	var _message : String = str( _q.reward_xp ) + "xp"
-	PlayerManager.reward_xp( _q.reward_xp )
-	for i in _q.reward_items:
-		PlayerManager.INVENTORY_DATA.add_item( i.item, i.quantity ) #Get the inventory data item
-		_message += ", " + i.item.name + " x" + str( i.quantity )
-	
-	#PlayerHud.queue_notification( "Quest Rewards Received!", _message )
-	pass
+#func disperse_quest_rewards( _q : Quest ) -> void:
+	## Give XP and item rewards to player
+	#var _message : String = str( _q.reward_xp ) + "xp"
+	#PlayerManager.reward_xp( _q.reward_xp )
+	#for i in _q.reward_items:
+		#PlayerManager.INVENTORY_DATA.add_item( i.item, i.quantity ) #Get the inventory data item
+		#_message += ", " + i.item.name + " x" + str( i.quantity )
+	#
+	##PlayerHud.queue_notification( "Quest Rewards Received!", _message )
+	#pass
 
 func find_quest(_quest : Quest) -> Dictionary:
 	for q in current_quests:

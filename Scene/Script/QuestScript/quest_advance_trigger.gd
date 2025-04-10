@@ -16,6 +16,5 @@ func advance_quest() -> void:
 	if _step == "N/A":
 		_step = ""
 	
-	print("advance quest " + _title)
 	QuestManager.update_quest(_title, _step, quest_complete)
 	pass

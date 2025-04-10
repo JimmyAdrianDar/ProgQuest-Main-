@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 	else:
 		global_position = lerp(global_position, parent.global_position, delta * 10)
 		parent.posVector = Vector2(0,0)
+
 func calculateVector():
 	var raw_vector = Vector2(
 		(global_position.x - parent.global_position.x) / maxLength,

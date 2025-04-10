@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cs0032o6cwms3"]
+
+[ext_resource type="PackedScene" uid="uid://cuku4dgdcms1" path="res://Scene/Scene/PlayerScene/joystick.tscn" id="1_flfob"]
+
+[node name="UserInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Joystick" parent="." instance=ExtResource("1_flfob")]
+position = Vector2(153, 885)

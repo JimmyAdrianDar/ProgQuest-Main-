@@ -1,12 +1,18 @@
-[gd_resource type="StyleBoxFlat" format=3 ]
+[gd_resource type="Resource" script_class="DialogicStyle" load_steps=4 format=3 uid="uid://b8p4jw7rdpe4i"]
+
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style_layer.gd" id="1_43v5j"]
+[ext_resource type="Script" path="res://addons/dialogic/Resources/dialogic_style.gd" id="2_ng22u"]
+
+[sub_resource type="Resource" id="Resource_7lywn"]
+script = ExtResource("1_43v5j")
+overrides = {}
 
 [resource]
-content_margin_left = 15.0
-content_margin_top = 15.0
-content_margin_right = 15.0
-content_margin_bottom = 15.0
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 5
-corner_radius_top_right = 5
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
+script = ExtResource("2_ng22u")
+name = "vn_textbox_default_panel"
+layer_list = Array[String]([])
+layer_info = {
+"": SubResource("Resource_7lywn")
+}
+base_overrides = {}
+layers = Array[ExtResource("1_43v5j")]([])

@@ -1,9 +1,13 @@
 extends Node
 
 var player : Player
+
+var is_talked : bool = false
+
 const INVENTORY_DATA : InventoryData = preload("res://Resources/InventoryResources/player_inventory.tres")
 
 var xp : int = 0
+
 
 func set_health( hp: int, max_hp: int ) -> void:
 	player.max_hp = max_hp

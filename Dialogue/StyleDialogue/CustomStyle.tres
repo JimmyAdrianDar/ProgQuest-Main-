@@ -13,7 +13,9 @@
 
 [sub_resource type="Resource" id="Resource_ufr2g"]
 script = ExtResource("1_qulnd")
-overrides = {}
+overrides = {
+"global_font_size": "35.0"
+}
 
 [sub_resource type="Resource" id="Resource_1dcso"]
 script = ExtResource("1_qulnd")
@@ -30,10 +32,13 @@ script = ExtResource("1_qulnd")
 scene = ExtResource("4_3y5vq")
 overrides = {}
 
-[sub_resource type="Resource" id="Resource_cyupo"]
+[sub_resource type="Resource" id="Resource_73hk3"]
 script = ExtResource("1_qulnd")
 scene = ExtResource("5_kxsnc")
-overrides = {}
+overrides = {
+"box_panel": "\"res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_default_panel.tres\"",
+"name_label_box_panel": "\"res://addons/dialogic/Modules/DefaultLayoutParts/Layer_VN_Textbox/vn_textbox_name_label_panel.tres\""
+}
 
 [sub_resource type="Resource" id="Resource_kb83g"]
 script = ExtResource("1_qulnd")
@@ -64,7 +69,7 @@ layer_info = {
 "10": SubResource("Resource_1dcso"),
 "11": SubResource("Resource_272lh"),
 "12": SubResource("Resource_415wo"),
-"13": SubResource("Resource_cyupo"),
+"13": SubResource("Resource_73hk3"),
 "14": SubResource("Resource_kb83g"),
 "15": SubResource("Resource_bsyac"),
 "16": SubResource("Resource_eij3q"),
@@ -72,4 +77,4 @@ layer_info = {
 }
 base_overrides = {}
 layers = Array[ExtResource("1_qulnd")]([])
-metadata/_latest_layer = "17"
+metadata/_latest_layer = "13"

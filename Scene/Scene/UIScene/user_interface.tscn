@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://70qcm7etk6pu"]
+
+[ext_resource type="PackedScene" uid="uid://cuku4dgdcms1" path="res://Scene/Scene/PlayerScene/joystick.tscn" id="1_efe8i"]
+
+[node name="UserInterface" type="CanvasLayer"]
+layer = 20
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 2431.0
+offset_bottom = 1081.0
+
+[node name="Joystick" parent="Control" instance=ExtResource("1_efe8i")]
+position = Vector2(152, 902)
+
+[node name="PopupUserInterface" type="MarginContainer" parent="Control"]
+layout_mode = 0
+offset_right = 2436.0
+offset_bottom = 1079.0
+
+[node name="BasePauseScreen" type="VBoxContainer" parent="Control/PopupUserInterface"]
+layout_mode = 2

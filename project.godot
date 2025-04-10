@@ -25,17 +25,22 @@ NavigationManager="*res://00_Globals/navigation_manager.gd"
 QuestManager="*res://Scene/Script/QuestScript/global_quest_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 UserInterfaceScript="res://Scene/Script/PlayerScript/user_interface_script.gd"
+GameEvent="*res://00_Globals/GameEvent.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "Bob": "res://Dialogue/DialogueCharacter/Bob.dch",
-"marcos": "res://Dialogue/DialogueCharacter/marcos.dch"
+"marcos": "res://Dialogue/DialogueCharacter/marcos.dch",
+"martha": "res://Dialogue/DialogueCharacter/martha.dch"
 }
 directories/dtl_directory={
 "BobDoneQuest": "res://Dialogue/DialogueTimeline/BobDoneQuest.dtl",
 "BobOnTheTreesQuest": "res://Dialogue/DialogueTimeline/BobOnTheTreesQuest.dtl",
 "BobStartingQuest": "res://Dialogue/DialogueTimeline/BobStartingQuest.dtl",
+"MarcosOnBossGate": "res://Dialogue/DialogueTimeline/MarcosOnBossGate.dtl",
+"MarthaStory": "res://Dialogue/DialogueTimeline/MarthaStory.dtl",
+"marcosEndGate": "res://Dialogue/DialogueTimeline/marcosEndGate.dtl",
 "marcosdialogue": "res://Dialogue/DialogueTimeline/marcosdialogue.dtl"
 }
 variables={
@@ -61,9 +66,10 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
-layout/style_list=["res://Dialogue/StyleDialogue/CustomStyle.tres"]
+layout/style_list=["res://Dialogue/StyleDialogue/CustomStyle.tres", ""]
 layout/default_style="res://Dialogue/StyleDialogue/CustomStyle.tres"
 portraits/default_portrait=""
+audio/max_channels=4.0
 
 [display]
 
@@ -168,6 +174,10 @@ ui_p={
 ]
 }
 exit={
+"deadzone": 0.5,
+"events": []
+}
+book={
 "deadzone": 0.5,
 "events": []
 }
