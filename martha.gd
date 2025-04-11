@@ -10,7 +10,6 @@ signal give_quest
 var active_timeline : String = ""
 var interact_count : int = 0
 
-
 func _ready() -> void:
 	interactive_area.interact = Callable(self, "_on_interact")
 	Dialogic.timeline_ended.connect(_on_timeline_ended)

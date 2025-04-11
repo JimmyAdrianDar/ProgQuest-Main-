@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://ccof5jqljbe2h"]
+[gd_scene load_steps=19 format=3 uid="uid://ccof5jqljbe2h"]
 
 [ext_resource type="PackedScene" uid="uid://cpyrtx7m63uot" path="res://Scene/Scene/QuestScene/QuestAdvanceTrigger.tscn" id="2_vprid"]
 [ext_resource type="PackedScene" uid="uid://c5glam7v25311" path="res://TileSet/Major Tile Map Revisions.tscn" id="3_efve3"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ph2t6bumjgfb" path="res://Scene/Scene/PlayerScene/player.tscn" id="5_3bvb7"]
 [ext_resource type="PackedScene" uid="uid://jnpciuqq0jwf" path="res://Character and Monster tscn/marcos.tscn" id="5_7mobo"]
 [ext_resource type="PackedScene" uid="uid://bnfciuy5uxhe" path="res://Scene/Scene/ItemPickupScene/item_pickup.tscn" id="5_8qsvb"]
+[ext_resource type="Script" path="res://world_container.gd" id="6_5w1k6"]
 [ext_resource type="Resource" uid="uid://c3ft3ehnid631" path="res://Resources/ItemResources/coins.tres" id="6_oyuvs"]
 [ext_resource type="Script" path="res://Scene/Script/QuestScript/area_node_in_slime.gd" id="7_5cnof"]
 [ext_resource type="Resource" uid="uid://bnupt2kjp3f0l" path="res://Resources/ItemResources/gems.tres" id="7_rexfn"]
@@ -90,7 +91,6 @@ Step: 5 - 5
 Complete: true"
 
 [node name="Player" parent="CharacterContainer" instance=ExtResource("5_3bvb7")]
-z_index = 2
 position = Vector2(623, -788)
 scale = Vector2(1.565, 1.565)
 
@@ -100,6 +100,7 @@ position = Vector2(-1794, 2081)
 scale = Vector2(1.84, 1.84)
 
 [node name="WorldContainer" type="Node2D" parent="."]
+script = ExtResource("6_5w1k6")
 
 [node name="TileMapContainer" type="Node2D" parent="WorldContainer"]
 position = Vector2(-18, -7)
