@@ -4,7 +4,10 @@ extends Area2D
 var once : int = 0
 
 func _on_body_entered(body: Player) -> void:
+	if NavigationManager.howmanytimes > 0:
+		self.queue_free()
 	if body and not once > 0:
-		npc._on_interactive_area_body_entered(body)
+		if npc != null:
+			npc._on_interactive_area_body_entered(body)
 		once += 1
 		print("once: ", once)

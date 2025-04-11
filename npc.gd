@@ -25,6 +25,10 @@ func _ready() -> void:
 	$InteractiveArea.visible = false
 
 func _process(delta: float) -> void:
+	if NavigationManager.howmanytimes > 0:
+		PlayerManager.player.quest_arrow_target_position(-1827.0, 2241.0)
+		self.queue_free()
+	
 	if PlayerManager.player.slime_killed == 1:
 		killed_1.emit()
 	if PlayerManager.player.slime_killed == 2:

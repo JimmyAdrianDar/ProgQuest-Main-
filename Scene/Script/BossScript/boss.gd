@@ -6,7 +6,7 @@ extends CharacterBody2D
 {"question": "Which part of speech describes an action?", "correct": "Verb", "options": ["Noun", "Verb", "Adjective"]},
 {"question": "Which part of speech replaces a noun?", "correct": "Pronoun", "options": ["Adjective", "Pronoun", "Verb"]},
 {"question": "Which word is an example of a noun?", "correct": "Table", "options": ["Run", "Quickly", "Table"]},
-{"question": "Which part of speech expresses strong?", "correct": "Interjection", "options": ["Verb", "Interjection", "Adjective"]}
+{"question": "Which part of speech expresses strong emotions?", "correct": "Interjection", "options": ["Verb", "Interjection", "Adjective"]}
 ]
 
 @onready var enemy_state_machine : EnemyStateMachine = $EnemyStateMachine

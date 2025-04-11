@@ -33,7 +33,7 @@ SaveManager="*res://00_Globals/global_save_manager.gd"
 directories/dch_directory={
 "Bob": "res://Dialogue/DialogueCharacter/Bob.dch",
 "marcos": "res://Dialogue/DialogueCharacter/marcos.dch",
-"martha": "res://Dialogue/DialogueCharacter/martha.dch"
+"martha": "res://Dialogue/DialogueTimeline/martha.dch"
 }
 directories/dtl_directory={
 "BobDoneQuest": "res://Dialogue/DialogueTimeline/BobDoneQuest.dtl",
