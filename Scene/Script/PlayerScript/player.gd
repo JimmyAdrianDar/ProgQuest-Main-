@@ -7,7 +7,7 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var health_component = $HealthComponent
 @onready var stat_component: Node2D = $StatComponent
 @onready var attack_component = $AttackComponent
-@onready var healthbar: ProgressBar = $"CanvasLayer/inGameUI/Healthbar"
+@onready var healthbar: ProgressBar = $CanvasLayer/inGameUI/SpriteUIHolder/Healthbar
 @onready var joystick: Node2D = $"CanvasLayer/inGameUI/Joystick"
 @onready var ui_control: Control = $"CanvasLayer/inGameUI"
 @onready var bag: TouchScreenButton = $CanvasLayer/inGameUI/Bag
@@ -34,6 +34,7 @@ func _ready() -> void:
 	NavigationManager.on_trigger_player_spawn.connect(_on_spawn)
 
 func _process(delta):
+	book_opened()
 	handle_attack()
 	
 
@@ -41,7 +42,7 @@ func _process(delta):
 func _physics_process(delta: float) -> void:
 #---------Official Movement Code With Joystick-----------
 	#direction = joystick.posVector
-	###print(direction)
+	#print(direction)
 	#if direction:
 		#direction = direction.normalized()
 		#velocity = direction * stat_component.Speed
@@ -51,6 +52,7 @@ func _physics_process(delta: float) -> void:
 	
 #-----------Debug Movement Code----------
 	direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
+	#direction = Input.get_vector("left", "right", "up", "down").normalized()
 	#if direction:
 		#velocity = direction * stat_component.Speed
 	#else:
@@ -58,25 +60,16 @@ func _physics_process(delta: float) -> void:
 	
 	
 	move_and_slide()
-	
-	if navigation_target_postion != Vector2.ZERO:
-		# Only update navigation when the target changes
-		if navigation_agent_2d.target_position != navigation_target_postion:
-			navigation_agent_2d.target_position = navigation_target_postion
-			next_path_position = navigation_agent_2d.get_next_path_position()
-
-		# Check if navigation is complete
-		if navigation_agent_2d.is_navigation_finished():
-			navigation_target_postion = Vector2.ZERO
-			
 
 func dialogue_ui_visibility(ui_visible : bool):
 	if ui_visible == true:
-		$CanvasLayer/inGameUI/Joystick.visible = ui_visible
+		$CanvasLayer/MovementWheel.visible = ui_visible
+		#$CanvasLayer/inGameUI/Joystick.visible = ui_visible
 		$CanvasLayer/inGameUI/Attack.visible = ui_visible
 		$CanvasLayer/inGameUI/Interact.visible = ui_visible
 	elif ui_visible == false:
-		$CanvasLayer/inGameUI/Joystick.visible = ui_visible
+		$CanvasLayer/MovementWheel.visible = ui_visible
+		#$CanvasLayer/inGameUI/Joystick.visible = ui_visible
 		$CanvasLayer/inGameUI/Attack.visible = ui_visible
 		$CanvasLayer/inGameUI/Interact.visible = ui_visible
 		
@@ -86,6 +79,21 @@ func all_control_viisbility(visibility_of_ui : bool):
 		$CanvasLayer.visible = visibility_of_ui
 	elif visibility_of_ui == false:
 		$CanvasLayer.visible = visibility_of_ui
+
+func all_book_visibility(visibility : bool):
+	if visibility == true:
+		$CanvasLayer/inGameUI.visible = visibility
+		$CanvasLayer/MovementWheel.visible = visibility
+		$CanvasLayer/QuestMarker.visible = visibility
+		$CanvasLayer/Book.visible = false
+		$CanvasLayer/Book2.visible = false
+		$CanvasLayer/Book3.visible = false
+		$CanvasLayer/Book4.visible = false
+	elif visibility == false:
+		$CanvasLayer/QuestMarker.visible = visibility
+		$CanvasLayer/inGameUI.visible = visibility
+		$CanvasLayer/MovementWheel.visible = visibility
+		$CanvasLayer/Book.visible = true
 
 func SetDirection() -> bool:
 	if direction == Vector2.ZERO:
@@ -141,6 +149,10 @@ func quest_arrow_visibility(is_visible : bool):
 		$CanvasLayer/QuestMarker.visible = is_visible
 	elif is_visible == true:
 		$CanvasLayer/QuestMarker.visible = is_visible
+
+func book_opened():
+	if Input.is_action_just_pressed("book"):
+		all_book_visibility(false)
 
 #Handles door system spawn
 func _on_spawn(position: Vector2, direction: String):

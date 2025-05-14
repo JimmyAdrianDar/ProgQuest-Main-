@@ -84,10 +84,6 @@ func anim_direction() -> String:
 	else:
 		return "side"
 
-#For slime animation blend
-func handle_animation_tree():
-	pass
-
 func _on_health_component_died() -> void:
 	emit_signal("enemy_destroyed")
 

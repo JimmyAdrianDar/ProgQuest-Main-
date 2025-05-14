@@ -7,17 +7,15 @@ signal finish_quest
 @onready var sprite = $Sprite2D
 @onready var player: Player = $"../Player"
 @onready var canvas_layer: CanvasLayer = $CanvasLayer
+@onready var book: book = $CanvasLayer/Book
 
 var active_timeline : String = ""
 var has_quest : bool = false
 var interact_count : int = 0
-@onready var book: book = $CanvasLayer/Book
-
 
 func _ready() -> void:
 	interactive_area.interact = Callable(self, "_on_interact")
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
-	GameEvent.martha_quest_finished.connect(quest_on_martha_finished)
 
 func _on_interact():
 	if interact_count == 0:

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuku4dgdcms1"]
 
 [ext_resource type="Script" path="res://Scene/Script/JoystickScript/joystick.gd" id="1_2m76m"]
-[ext_resource type="Texture2D" uid="uid://ckx28l6tqeiu7" path="res://Sprite/JoystickSprite/Untitled__2_-removebg-preview.png" id="2_tlc4b"]
+[ext_resource type="Texture2D" uid="uid://ckx28l6tqeiu7" path="res://Sprite/JoystickSprite/Untitled__2_-removebg-preview.png" id="2_mtdwh"]
 [ext_resource type="Texture2D" uid="uid://2ijy2vihbnx6" path="res://Sprite/JoystickSprite/Untitled-removebg-preview.png" id="3_5l4bj"]
 [ext_resource type="Script" path="res://Scene/Script/JoystickScript/knob.gd" id="4_72phs"]
 
@@ -10,7 +10,7 @@ script = ExtResource("1_2m76m")
 
 [node name="Ring" type="Sprite2D" parent="."]
 scale = Vector2(0.35, 0.35)
-texture = ExtResource("2_tlc4b")
+texture = ExtResource("2_mtdwh")
 
 [node name="Knob" type="Sprite2D" parent="."]
 scale = Vector2(0.215, 0.215)

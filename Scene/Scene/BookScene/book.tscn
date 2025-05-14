@@ -87,10 +87,10 @@ She sings beautifully."
 [node name="Label4" type="Label" parent="."]
 texture_filter = 2
 layout_mode = 0
-offset_left = 1271.0
-offset_top = 141.0
-offset_right = 2092.0
-offset_bottom = 875.0
+offset_left = 1291.0
+offset_top = 143.0
+offset_right = 2112.0
+offset_bottom = 877.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Noun - A word that names 
@@ -106,10 +106,10 @@ stranger."
 [node name="Label5" type="Label" parent="."]
 texture_filter = 2
 layout_mode = 0
-offset_left = 1370.0
-offset_top = 502.0
-offset_right = 2191.0
-offset_bottom = 1236.0
+offset_left = 1390.0
+offset_top = 504.0
+offset_right = 2211.0
+offset_bottom = 1238.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "park
@@ -130,10 +130,10 @@ text = "               jumped
 
 [node name="Next" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1987.0
-offset_top = 781.0
-offset_right = 2074.0
-offset_bottom = 888.0
+offset_left = 2007.0
+offset_top = 783.0
+offset_right = 2094.0
+offset_bottom = 890.0
 theme_override_styles/hover = SubResource("StyleBoxTexture_vorjp")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_n5yhb")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kik1j")

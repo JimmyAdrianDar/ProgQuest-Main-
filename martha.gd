@@ -10,6 +10,7 @@ signal give_quest
 var active_timeline : String = ""
 var interact_count : int = 0
 
+
 func _ready() -> void:
 	interactive_area.interact = Callable(self, "_on_interact")
 	Dialogic.timeline_ended.connect(_on_timeline_ended)
@@ -34,7 +35,11 @@ func _on_timeline_ended():
 		
 		is_quest_complete.set_value()
 		
-		GameEvent.martha_quest_finished.emit(true)
+		PlayerManager.player.dialogue_ui_visibility(true)
+		PlayerManager.player.quest_arrow_target_position(2899.0, -808.0)
+		PlayerManager.player.quest_arrow_visibility(true)
+		active_timeline = ""
+		
 		print("Martha emitted quest finished")
 		
 		await get_tree().create_timer(2).timeout
@@ -44,4 +49,6 @@ func _on_timeline_ended():
 func _on_area_2d_body_entered(body: CharacterBody2D) -> void:
 	if body:
 		if interact_count >= 0:
+			PlayerManager.player.quest_arrow_target_position(0.0, 0.0)
+			PlayerManager.player.quest_arrow_visibility(false)
 			$Area2D.visible = false

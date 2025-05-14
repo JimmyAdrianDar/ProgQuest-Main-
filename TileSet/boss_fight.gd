@@ -1,4 +1,7 @@
-extends Node2D
+class_name Boss_fight extends Node2D
+
+@onready var sub_viewport_container: SubViewportContainer = $CanvasLayer/SubViewportContainer
+
 
 func _ready() -> void:
 	if NavigationManager.spawn_door_tag != null:

@@ -23,6 +23,7 @@ func _process(delta: float) -> void:
 		global_position = lerp(global_position, parent.global_position, delta * 10)
 		parent.posVector = Vector2(0,0)
 
+#Calculates the vector interms of where the knob is position
 func calculateVector():
 	var raw_vector = Vector2(
 		(global_position.x - parent.global_position.x) / maxLength,
@@ -37,7 +38,6 @@ func calculateVector():
 
 func _on_button_button_down() -> void:
 	pressing = true
-
 
 func _on_button_button_up() -> void:
 	pressing = false

@@ -25,15 +25,17 @@ NavigationManager="*res://00_Globals/navigation_manager.gd"
 QuestManager="*res://Scene/Script/QuestScript/global_quest_manager.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 UserInterfaceScript="res://Scene/Script/PlayerScript/user_interface_script.gd"
-GameEvent="*res://00_Globals/GameEvent.gd"
 SaveManager="*res://00_Globals/global_save_manager.gd"
+Game="*res://game.gd"
+BossFight="*res://TileSet/boss_fight.gd"
 
 [dialogic]
 
 directories/dch_directory={
 "Bob": "res://Dialogue/DialogueCharacter/Bob.dch",
-"marcos": "res://Dialogue/DialogueCharacter/marcos.dch",
-"martha": "res://Dialogue/DialogueTimeline/martha.dch"
+"DialogueTimeline/martha": "res://Dialogue/DialogueTimeline/martha.dch",
+"Martha": "res://Dialogue/DialogueCharacter/Martha.dch",
+"marcos": "res://Dialogue/DialogueCharacter/marcos.dch"
 }
 directories/dtl_directory={
 "BobDoneQuest": "res://Dialogue/DialogueTimeline/BobDoneQuest.dtl",

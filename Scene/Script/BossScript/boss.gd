@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal boss_destroyed
+
 @export var question_list : Array[Dictionary] = [
 {"question": "Which of the following words is a preposition?", "correct": "On", "options": ["Jump", "On", "Happy"]},
 {"question": "Which of the following words is a noun?", "correct": "Happiness", "options": ["Quickly", "Happiness", "Jump"]},
@@ -11,8 +13,9 @@ extends CharacterBody2D
 
 @onready var enemy_state_machine : EnemyStateMachine = $EnemyStateMachine
 @onready var healthbar: ProgressBar = $CanvasLayer/Healthbar
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
-var health : int = 100
+var health : int = 60
 
 func _ready() -> void:
 	healthbar.init_health(health)
@@ -21,9 +24,14 @@ func _ready() -> void:
 func take_damage(amount):
 	health -= amount
 	healthbar.health = health
-	print(health)
+
+#happens when the boss reaches 0 hp
 	if health <= 0:
-		queue_free()
+		emit_signal("boss_destroyed")
+	pass
+
+func update_animation(state:String) -> void:
+	animation_player.play(state + "_")
 	pass
 
 func _process(delta: float) -> void:

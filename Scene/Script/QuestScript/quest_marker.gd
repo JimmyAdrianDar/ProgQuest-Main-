@@ -38,7 +38,7 @@ func _target_on_screen():
 
 func _set_screen_position(screen_target_position):
 	var screen_size = get_viewport_rect().size
-	var borderOffSet = 550
+	var borderOffSet = 560
 	var target_position = screen_target_position
 	
 	if target_position.x < borderOffSet:

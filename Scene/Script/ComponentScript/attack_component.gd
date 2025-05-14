@@ -47,3 +47,4 @@ func start_cooldown(cooldown_time: float) -> void:
 # Callback when the cooldown ends
 func _on_cooldown_complete() -> void:
 	is_on_cooldown = false
+	

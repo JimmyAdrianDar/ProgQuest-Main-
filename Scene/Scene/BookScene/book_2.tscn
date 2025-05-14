@@ -131,6 +131,7 @@ text = "She
 They"
 
 [node name="Next" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1987.0
 offset_top = 781.0
 offset_right = 2074.0

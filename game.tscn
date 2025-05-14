@@ -1,20 +1,21 @@
 [gd_scene load_steps=19 format=3 uid="uid://ccof5jqljbe2h"]
 
+[ext_resource type="Script" path="res://game.gd" id="1_u6u6s"]
 [ext_resource type="PackedScene" uid="uid://cpyrtx7m63uot" path="res://Scene/Scene/QuestScene/QuestAdvanceTrigger.tscn" id="2_vprid"]
 [ext_resource type="PackedScene" uid="uid://c5glam7v25311" path="res://TileSet/Major Tile Map Revisions.tscn" id="3_efve3"]
 [ext_resource type="PackedScene" uid="uid://bpavamaopisfn" path="res://Scene/Scene/MobsScene/slime_monster_lava.tscn" id="3_hvgyi"]
 [ext_resource type="PackedScene" uid="uid://yn8waqsf3md8" path="res://Character and Monster tscn/npc.tscn" id="4_mf6uh"]
 [ext_resource type="PackedScene" uid="uid://ph2t6bumjgfb" path="res://Scene/Scene/PlayerScene/player.tscn" id="5_3bvb7"]
-[ext_resource type="PackedScene" uid="uid://jnpciuqq0jwf" path="res://Character and Monster tscn/marcos.tscn" id="5_7mobo"]
 [ext_resource type="PackedScene" uid="uid://bnfciuy5uxhe" path="res://Scene/Scene/ItemPickupScene/item_pickup.tscn" id="5_8qsvb"]
-[ext_resource type="Script" path="res://world_container.gd" id="6_5w1k6"]
+[ext_resource type="PackedScene" uid="uid://hje6ydgi6i87" path="res://martha.tscn" id="5_evkdp"]
 [ext_resource type="Resource" uid="uid://c3ft3ehnid631" path="res://Resources/ItemResources/coins.tres" id="6_oyuvs"]
 [ext_resource type="Script" path="res://Scene/Script/QuestScript/area_node_in_slime.gd" id="7_5cnof"]
 [ext_resource type="Resource" uid="uid://bnupt2kjp3f0l" path="res://Resources/ItemResources/gems.tres" id="7_rexfn"]
 [ext_resource type="Resource" uid="uid://dfcpbakbu8ao8" path="res://Resources/ItemResources/keys.tres" id="8_cgaxs"]
 [ext_resource type="PackedScene" uid="uid://dvqqle67w6thh" path="res://Scene/Scene/DoorSystemScene/DoorSystem.tscn" id="10_38k8x"]
 [ext_resource type="Resource" uid="uid://ix7j2s1kolf3" path="res://Resources/QuestResource/TryQuest.tres" id="11_q5rd5"]
-[ext_resource type="Script" path="res://Scene/Script/DoorSystemScript/door_system.gd" id="14_0sr3r"]
+[ext_resource type="Script" path="res://sub_viewport.gd" id="15_fdpnk"]
+[ext_resource type="Texture2D" uid="uid://ds42uaex0jmk5" path="res://Sprite/JoystickSprite/Screenshot_2025-04-19_234221-removebg-preview.png" id="16_qvcyg"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nfeb6"]
 radius = 370.086
@@ -22,11 +23,9 @@ radius = 370.086
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rl0yx"]
 size = Vector2(26.2172, 17.185)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueljy"]
-size = Vector2(116, 70)
-
 [node name="Game" type="Node2D"]
 process_mode = 1
+script = ExtResource("1_u6u6s")
 
 [node name="CharacterContainer" type="Node2D" parent="."]
 position = Vector2(79, 38)
@@ -91,16 +90,15 @@ Step: 5 - 5
 Complete: true"
 
 [node name="Player" parent="CharacterContainer" instance=ExtResource("5_3bvb7")]
-position = Vector2(623, -788)
+z_index = 6
+position = Vector2(667, -804)
 scale = Vector2(1.565, 1.565)
 
-[node name="Marcos" parent="CharacterContainer" instance=ExtResource("5_7mobo")]
+[node name="Martha" parent="CharacterContainer" instance=ExtResource("5_evkdp")]
 z_index = 6
-position = Vector2(-1794, 2081)
-scale = Vector2(1.84, 1.84)
+position = Vector2(-2043, 1993)
 
 [node name="WorldContainer" type="Node2D" parent="."]
-script = ExtResource("6_5w1k6")
 
 [node name="TileMapContainer" type="Node2D" parent="WorldContainer"]
 position = Vector2(-18, -7)
@@ -121,23 +119,23 @@ shape = SubResource("CircleShape2D_nfeb6")
 position = Vector2(0, 4)
 
 [node name="SlimeMonster_Lava" parent="MobsContainer" instance=ExtResource("3_hvgyi")]
-z_index = 6
+z_index = 5
 position = Vector2(-1137, 218)
 
 [node name="SlimeMonster_Lava2" parent="MobsContainer" instance=ExtResource("3_hvgyi")]
-z_index = 6
+z_index = 5
 position = Vector2(-971, 268)
 
 [node name="SlimeMonster_Lava3" parent="MobsContainer" instance=ExtResource("3_hvgyi")]
-z_index = 6
+z_index = 5
 position = Vector2(-1077, 310)
 
 [node name="SlimeMonster_Lava4" parent="MobsContainer" instance=ExtResource("3_hvgyi")]
-z_index = 6
+z_index = 5
 position = Vector2(-1027, 176)
 
 [node name="SlimeMonster_Lava5" parent="MobsContainer" instance=ExtResource("3_hvgyi")]
-z_index = 6
+z_index = 5
 position = Vector2(-1214, 309)
 
 [node name="PickupContainer" type="Node2D" parent="."]
@@ -175,21 +173,39 @@ position = Vector2(-3.34131, -9.06922)
 shape = SubResource("RectangleShape2D_rl0yx")
 
 [node name="Spawn" parent="Doors/Door_E" index="1"]
-position = Vector2(6.44392, 14.7971)
+position = Vector2(-2.86395, 20.5251)
 
-[node name="Door_N" type="Area2D" parent="Doors"]
-z_index = 4
-script = ExtResource("14_0sr3r")
-destination_level_tag = "swamp"
-destination_door_tag = "S"
-spawn_direction = "down"
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Doors/Door_N"]
-position = Vector2(-1977, 2083)
-shape = SubResource("RectangleShape2D_ueljy")
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -421.0
+offset_top = 41.0
+offset_right = -71.0
+offset_bottom = 391.0
+grow_horizontal = 0
+metadata/_edit_use_anchors_ = true
 
-[node name="Spawn" type="Marker2D" parent="Doors/Door_N"]
-position = Vector2(-1962, 2239)
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(350, 350)
+render_target_update_mode = 4
+script = ExtResource("15_fdpnk")
+
+[node name="Camera2D" type="Camera2D" parent="CanvasLayer/SubViewportContainer/SubViewport"]
+zoom = Vector2(0.3, 0.3)
+
+[node name="Line2D" type="Line2D" parent="CanvasLayer/SubViewportContainer"]
+points = PackedVector2Array(1, 0, 1, 349, 348, 349, 348, 1, 1, -1)
+width = 3.0
+default_color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/SubViewportContainer"]
+position = Vector2(189, 179)
+scale = Vector2(0.175, 0.175)
+texture = ExtResource("16_qvcyg")
 
 [connection signal="give_quest" from="CharacterContainer/Npc" to="CharacterContainer/Npc/QuestAdvanceTrigger" method="advance_quest"]
 [connection signal="killed_1" from="CharacterContainer/Npc" to="CharacterContainer/Npc/QuestAdvanceTrigger2" method="advance_quest"]
@@ -198,6 +214,5 @@ position = Vector2(-1962, 2239)
 [connection signal="killed_4" from="CharacterContainer/Npc" to="CharacterContainer/Npc/QuestAdvanceTrigger5" method="advance_quest"]
 [connection signal="killed_5" from="CharacterContainer/Npc" to="CharacterContainer/Npc/QuestAdvanceTrigger6" method="advance_quest"]
 [connection signal="body_entered" from="WorldContainer/Area2D" to="WorldContainer/Area2D" method="_on_body_entered"]
-[connection signal="body_entered" from="Doors/Door_N" to="Doors/Door_N" method="_on_body_entered"]
 
 [editable path="Doors/Door_E"]

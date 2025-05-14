@@ -25,10 +25,6 @@ func _ready() -> void:
 	$InteractiveArea.visible = false
 
 func _process(delta: float) -> void:
-	if NavigationManager.howmanytimes > 0:
-		PlayerManager.player.quest_arrow_target_position(-1827.0, 2241.0)
-		self.queue_free()
-	
 	if PlayerManager.player.slime_killed == 1:
 		killed_1.emit()
 	if PlayerManager.player.slime_killed == 2:
@@ -102,9 +98,11 @@ func _on_timeline_ended():
 		$InteractiveArea.visible = true
 	if active_timeline == "BobDoneQuest":
 		PlayerManager.player.dialogue_ui_visibility(true)
-		PlayerManager.player.quest_arrow_target_position(-1756.0, 2107.0)
+		PlayerManager.player.quest_arrow_target_position(-1928.0, 2060.0)
 		PlayerManager.player.quest_arrow_visibility(true)
 		active_timeline = ""
+		
+		PlayerManager.player.bag.visible = true
 		
 		await get_tree().create_timer(2).timeout
 		$InteractiveArea.visible = true

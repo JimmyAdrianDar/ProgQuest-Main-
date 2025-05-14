@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cow8mn8kyfy64"]
 
-[ext_resource type="Texture2D" uid="uid://tdf7bnih8f6" path="res://Sprite/MobsSprite/LavaSlimeSprite/idle wizard.png" id="1_5o5by"]
+[ext_resource type="Texture2D" uid="uid://tdf7bnih8f6" path="res://Sprite/MobsSprite/WizardSprite/idle wizard.png" id="1_5o5by"]
 [ext_resource type="Script" path="res://Scene/Script/BossScript/minions.gd" id="1_51rd3"]
 [ext_resource type="PackedScene" uid="uid://ko874n1gwkwk" path="res://Scene/Scene/ComponentScene/stat_component.tscn" id="3_luo0x"]
 [ext_resource type="PackedScene" uid="uid://bcylm4m1venn2" path="res://Scene/Scene/ComponentScene/hitbox_component.tscn" id="4_wvyma"]
