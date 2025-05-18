@@ -17,7 +17,6 @@ func init() -> void:
 	pass
 
 func enter() -> void:
-	print("BossDealDamageState")
 	boss.update_animation(anim_name)
 	await get_tree().create_timer(1.3).timeout
 	shoot()

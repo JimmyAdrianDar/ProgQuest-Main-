@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cow8mn8kyfy64"]
+[gd_scene load_steps=13 format=3 uid="uid://cow8mn8kyfy64"]
 
 [ext_resource type="Texture2D" uid="uid://tdf7bnih8f6" path="res://Sprite/MobsSprite/WizardSprite/idle wizard.png" id="1_5o5by"]
 [ext_resource type="Script" path="res://Scene/Script/BossScript/minions.gd" id="1_51rd3"]
@@ -6,6 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://bcylm4m1venn2" path="res://Scene/Scene/ComponentScene/hitbox_component.tscn" id="4_wvyma"]
 [ext_resource type="PackedScene" uid="uid://bxog51hcup8oj" path="res://Character and Monster tscn/healthbar.tscn" id="5_rtioq"]
 [ext_resource type="PackedScene" uid="uid://buycf6ln4yg5s" path="res://Scene/Scene/ComponentScene/health_component.tscn" id="6_flh8u"]
+[ext_resource type="Script" path="res://Scene/Script/MobsScript/enemy_state_machine.gd" id="7_qhhiy"]
+[ext_resource type="Script" path="res://Scene/Script/MinionsState/minion_state_idle.gd" id="8_j4g8s"]
+[ext_resource type="Script" path="res://Scene/Script/MinionsState/minion_state_chase.gd" id="9_i4u8l"]
+[ext_resource type="Script" path="res://Scene/Script/MinionsState/minion_state_attack.gd" id="10_in72t"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7y7tq"]
 radius = 4.8669
@@ -53,6 +57,19 @@ offset_bottom = 33.0448
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_flh8u")]
 stat_component_path = NodePath("../StatComponent")
+
+[node name="EnemyStateMachine" type="Node" parent="."]
+script = ExtResource("7_qhhiy")
+
+[node name="Idle" type="Node" parent="EnemyStateMachine" node_paths=PackedStringArray("after_idle_state")]
+script = ExtResource("8_j4g8s")
+after_idle_state = NodePath("../Chase")
+
+[node name="Chase" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("9_i4u8l")
+
+[node name="Attack" type="Node" parent="EnemyStateMachine"]
+script = ExtResource("10_in72t")
 
 [connection signal="receive_damage" from="HitboxComponent" to="." method="_on_hitbox_component_receive_damage"]
 [connection signal="died" from="HealthComponent" to="." method="_on_health_component_died"]

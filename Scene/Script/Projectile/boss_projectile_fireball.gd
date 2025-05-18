@@ -14,11 +14,11 @@ func _physics_process(delta: float) -> void:
 	velocity = Vector2(0, -SPEED)
 	move_and_slide()
 	
+	#Target will only be the player
 	if !_TARGET:
 		position += max_speed * Vector2.RIGHT.rotated(rotation) * delta
 		return
-		
-	print("Target is seen")
+	
 	look_at(_TARGET.global_position)
 	position = position.move_toward(_TARGET.global_position, max_speed)
 	

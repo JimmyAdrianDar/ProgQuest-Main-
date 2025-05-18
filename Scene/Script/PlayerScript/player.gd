@@ -18,7 +18,6 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 @onready var state_machine: PlayerStateMachine = $StateMachine
 @onready var attack_collision_shape_2d: CollisionShape2D = $AttackComponent/CollisionShape2D
 
-
 var direction : Vector2 = Vector2.ZERO
 var idle
 var cardinal_direction : Vector2 = Vector2.DOWN
@@ -36,7 +35,6 @@ func _ready() -> void:
 func _process(delta):
 	book_opened()
 	handle_attack()
-	
 
 #Movement Mechanics
 func _physics_process(delta: float) -> void:

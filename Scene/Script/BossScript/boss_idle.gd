@@ -12,7 +12,6 @@ func init() -> void:
 	pass
 
 func enter() -> void:
-	print("BossIdleState")
 	_wait_time = randf_range(state_duration_min, state_duration_max)
 	_timer = 0.0
 	pass

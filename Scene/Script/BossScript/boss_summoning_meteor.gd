@@ -9,7 +9,7 @@ var transition_to_damage: bool = false
 var transition_back_to_question: bool = false
 
 var current_question = {}
-var minion_positions = [Vector2(-100, 50), Vector2(0, 50), Vector2(100, 50)]
+var minion_positions = [Vector2(-100, 100), Vector2(0, 100), Vector2(100, 100)]
 var waiting_for_answer: bool = true
 
 var minions: Array = []
@@ -17,10 +17,9 @@ var minions: Array = []
 var incorrect_questions: Array = []
 var asked_questions: Array = []
 
-var in_review_mode: bool = false  # <== NEW FLAG
+var in_review_mode: bool = false
 
 func enter() -> void:
-	print("Boss Question State")
 	waiting_for_answer = true
 	await cleanup_minions()
 	ask_question()
@@ -37,7 +36,6 @@ func ask_question():
 
 		if available_questions.is_empty():
 			if incorrect_questions.is_empty():
-				print("All questions answered correctly. Quiz done.")
 				# End or change state as needed
 				return
 			else:
@@ -49,7 +47,6 @@ func ask_question():
 		available_questions = incorrect_questions
 
 		if available_questions.is_empty():
-			print("All incorrect questions corrected. Ending question phase.")
 			# All incorrect questions corrected now
 			# Change to damage state or next boss phase
 			transition_to_damage = true
@@ -76,11 +73,11 @@ func _on_minion_died(minion):
 	if minion.is_correct:
 		boss.take_damage(15)
 		
-		# ✅ Mark current question as asked
+		#  Mark current question as asked
 		if current_question not in asked_questions:
 			asked_questions.append(current_question)
 
-		# ✅ Remove from incorrect if it was wrong before
+		#  Remove from incorrect if it was wrong before
 		if current_question in incorrect_questions:
 			incorrect_questions.erase(current_question)
 		
