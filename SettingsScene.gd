@@ -1,9 +1,14 @@
 extends Control
 
+var mainMenu_scene = preload("res://MainMenu.tscn")
+
+func _ready() -> void:
+	$"../AnimationPlayer".play("open_settings")
 
 func _on_back_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://MainMenu.tscn")
-
+	$"../AnimationPlayer".play("close_settings")
+	if $"../AnimationPlayer".animation_finished:
+		get_tree().change_scene_to_file("res://MainMenu.tscn")
 
 func _on_mute_or_un_mute_pressed() -> void:
 	var master_bus_index = AudioServer.get_bus_index("Master")

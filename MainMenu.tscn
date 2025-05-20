@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cvh8l1hkwnfht"]
+[gd_scene load_steps=20 format=3 uid="uid://cvh8l1hkwnfht"]
 
 [ext_resource type="AudioStream" uid="uid://dltg1wdtq6gft" path="res://Music - Sound Effects/Background Music.mp3" id="1_wk4u8"]
 [ext_resource type="Texture2D" uid="uid://big1sp5ljiyd5" path="res://Background assets/Login Walpper.png" id="2_dx2ka"]
@@ -31,10 +31,173 @@ texture = ExtResource("5_j6bsr")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qqqcl"]
 texture = ExtResource("6_ihxeo")
 
+[sub_resource type="Animation" id="Animation_vppo5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(893, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/ProgQuest Logo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/ProgQuest Logo/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_wj672"]
+resource_name = "close_menu"
+length = 0.55
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(893, 1080), Vector2(3, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/ProgQuest Logo/VBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/ProgQuest Logo:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Panel/ProgQuest Logo:size")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.466667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(591, 476), Vector2(591, 476)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Panel/ProgQuest Logo/VBoxContainer:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.033334, 0.066667, 0.1, 0.133334, 0.166667, 0.2, 0.233334, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(-90, 447), Vector2(-99.4261, 447), Vector2(-113.426, 447), Vector2(-126.426, 447), Vector2(-126, 447), Vector2(-126, 447), Vector2(-126, 447), Vector2(-126, 447), Vector2(-126, 447), Vector2(-126, 447)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Panel/ProgQuest Logo/VBoxContainer:size")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.1, 0.133334, 0.166667, 0.2, 0.233334, 0.266667, 0.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(326.48, 249), Vector2(317, 249), Vector2(309, 249), Vector2(304, 249), Vector2(283, 249), Vector2(260, 249), Vector2(241, 249)]
+}
+
+[sub_resource type="Animation" id="Animation_bs6li"]
+resource_name = "open_menu"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1080), Vector2(893, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/ProgQuest Logo:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel/ProgQuest Logo/VBoxContainer:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_emeaw"]
+_data = {
+"RESET": SubResource("Animation_vppo5"),
+"close_menu": SubResource("Animation_wj672"),
+"open_menu": SubResource("Animation_bs6li")
+}
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 process_mode = 3
 stream = ExtResource("1_wk4u8")
 autoplay = true
+metadata/_edit_vertical_guides_ = [-131.0, 192.0]
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -62,20 +225,22 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_x5iff")
 
 [node name="ProgQuest Logo" type="Panel" parent="Panel"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.172646
 anchor_right = 0.811659
 anchor_bottom = 0.319444
-offset_left = 6.82712
+offset_left = 6.82736
 offset_top = -16.0
-offset_right = 27.1885
+offset_right = 27.1888
 offset_bottom = 115.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_r4mdx")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Panel/ProgQuest Logo"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -84,7 +249,7 @@ anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -385.5
 offset_top = 209.0
-offset_right = -59.0203
+offset_right = -59.02
 offset_bottom = 458.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -132,6 +297,11 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_oj78e")
 theme_override_styles/pressed = SubResource("StyleBoxTexture_in7q7")
 theme_override_styles/normal = SubResource("StyleBoxTexture_qqqcl")
 text = "Credits"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_emeaw")
+}
 
 [connection signal="pressed" from="Panel/ProgQuest Logo/VBoxContainer/Start Button" to="Panel/ProgQuest Logo/VBoxContainer/Start Button" method="_on_pressed"]
 [connection signal="pressed" from="Panel/ProgQuest Logo/VBoxContainer/Settings Button" to="Panel/ProgQuest Logo/VBoxContainer/Start Button" method="_on_settings_button_pressed"]

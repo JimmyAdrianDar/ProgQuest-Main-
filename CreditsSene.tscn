@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dsxjj3qxbnk44"]
+[gd_scene load_steps=14 format=3 uid="uid://dsxjj3qxbnk44"]
 
 [ext_resource type="AudioStream" uid="uid://dltg1wdtq6gft" path="res://Music - Sound Effects/Background Music.mp3" id="1_a4t1v"]
 [ext_resource type="Texture2D" uid="uid://big1sp5ljiyd5" path="res://Background assets/Login Walpper.png" id="2_rdadx"]
@@ -16,6 +16,384 @@ bg_color = Color(0, 0, 0, 0.815686)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h8qku"]
 texture = ExtResource("4_duvyd")
+
+[sub_resource type="Animation" id="Animation_f56d3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1730, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelContainer/Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(467, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LabelContainer/Label2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(251, 346)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LabelContainer/Label4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(271, 563)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LabelContainer/Label6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(278, 764)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LabelContainer/Label8:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(271, 870)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LabelContainer/Label3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(792, 403)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LabelContainer/Label5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(792, 620)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("LabelContainer/Label7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(803, 784)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("LabelContainer/Label9:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(809, 898)]
+}
+
+[sub_resource type="Animation" id="Animation_nicb7"]
+resource_name = "close_credits"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1730, 1080), Vector2(0, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelContainer/Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(467, 100), Vector2(307.2, 100), Vector2(164.67, 100), Vector2(33.14, 100), Vector2(-109.77, 100), Vector2(-266.385, 100), Vector2(-407.075, 100), Vector2(-544.495, 100), Vector2(-697.1, 100), Vector2(-828.515, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LabelContainer/Label2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(251, 346), Vector2(251, 346), Vector2(228.07, 346), Vector2(89.99, 346), Vector2(-65.325, 346), Vector2(-211.965, 346), Vector2(-365.64, 346), Vector2(-498.57, 346)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LabelContainer/Label4:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.166667, 0.2, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(271, 563), Vector2(165.59, 563), Vector2(26.44, 563), Vector2(-124.8, 563), Vector2(-262.46, 563), Vector2(-397.24, 563)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LabelContainer/Label6:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.166667, 0.2, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(278, 764), Vector2(278, 764), Vector2(107.83, 764), Vector2(-16.18, 764), Vector2(-168.525, 764), Vector2(-296.49, 764)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LabelContainer/Label8:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.166667, 0.2, 0.233333, 0.266667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(271, 870), Vector2(271, 870), Vector2(99.17, 870), Vector2(-8.535, 870), Vector2(-164.05, 870), Vector2(-289.765, 870)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LabelContainer/Label3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(792, 403), Vector2(757.44, 403), Vector2(608.135, 403), Vector2(459.28, 403), Vector2(319.065, 403), Vector2(175.48, 403), Vector2(37.13, 403), Vector2(-112.775, 403), Vector2(-252.635, 403), Vector2(-407.845, 403), Vector2(-545.345, 403)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LabelContainer/Label5:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(792, 620), Vector2(715.395, 620), Vector2(562.685, 620), Vector2(427.17, 620), Vector2(277.14, 620), Vector2(131.29, 620), Vector2(-16.295, 620), Vector2(-151.615, 620), Vector2(-296.045, 620), Vector2(-445.475, 620), Vector2(-586.8, 620)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("LabelContainer/Label7:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(803, 784), Vector2(671.385, 784), Vector2(523.675, 784), Vector2(377.95, 784), Vector2(235.73, 784), Vector2(88.485, 784), Vector2(-41.295, 784), Vector2(-194.73, 784), Vector2(-345.095, 784), Vector2(-475.55, 784)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("LabelContainer/Label9:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.166667, 0.2, 0.233333, 0.266667, 0.3, 0.333333, 0.366667, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(809, 898), Vector2(746.09, 898), Vector2(607.205, 898), Vector2(457.72, 898), Vector2(305.295, 898), Vector2(161.725, 898), Vector2(16.355, 898), Vector2(-124.295, 898), Vector2(-276.025, 898), Vector2(-406.445, 898)]
+}
+
+[sub_resource type="Animation" id="Animation_pag8v"]
+resource_name = "open_credits"
+length = 0.45
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 1080), Vector2(1730, 1080)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("LabelContainer/Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-847.455, 100), Vector2(467, 100)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("LabelContainer/Label3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-535.465, 403), Vector2(792, 403)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("LabelContainer/Label5:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-591.43, 620), Vector2(792, 620)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LabelContainer/Label4:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1000, 563), Vector2(271, 563)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("LabelContainer/Label7:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-512.475, 784), Vector2(803, 784)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("LabelContainer/Label6:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-961.77, 764), Vector2(278, 764)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LabelContainer/Label9:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-443.41, 898), Vector2(809, 898)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("LabelContainer/Label8:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-963.105, 870), Vector2(271, 870)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("LabelContainer/Label2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-1066.61, 346), Vector2(251, 346)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rhshg"]
+_data = {
+"RESET": SubResource("Animation_f56d3"),
+"close_credits": SubResource("Animation_nicb7"),
+"open_credits": SubResource("Animation_pag8v")
+}
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource("1_a4t1v")
@@ -59,7 +437,14 @@ theme_override_styles/pressed = SubResource("StyleBoxTexture_h8qku")
 theme_override_styles/normal = SubResource("StyleBoxTexture_h8qku")
 script = ExtResource("5_75n7w")
 
-[node name="Label" type="Label" parent="."]
+[node name="LabelContainer" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1358.0
+offset_bottom = 1077.0
+
+[node name="Label" type="Label" parent="LabelContainer"]
+layout_mode = 0
 offset_left = 467.0
 offset_top = 100.0
 offset_right = 804.0
@@ -69,7 +454,8 @@ theme_override_fonts/font = ExtResource("6_sfxbm")
 theme_override_font_sizes/font_size = 70
 text = "CREDITS TO:"
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="LabelContainer"]
+layout_mode = 0
 offset_left = 251.0
 offset_top = 346.0
 offset_right = 459.0
@@ -80,7 +466,8 @@ theme_override_font_sizes/font_size = 35
 text = "Jowan Spooner
 Emilio Coppola"
 
-[node name="Label4" type="Label" parent="."]
+[node name="Label4" type="Label" parent="LabelContainer"]
+layout_mode = 0
 offset_left = 271.0
 offset_top = 563.0
 offset_right = 424.0
@@ -91,7 +478,8 @@ theme_override_font_sizes/font_size = 35
 text = "COco Code 
 Youtuber"
 
-[node name="Label6" type="Label" parent="."]
+[node name="Label6" type="Label" parent="LabelContainer"]
+layout_mode = 0
 offset_left = 278.0
 offset_top = 764.0
 offset_right = 431.0
@@ -101,7 +489,8 @@ theme_override_fonts/font = ExtResource("6_sfxbm")
 theme_override_font_sizes/font_size = 35
 text = "Piskel"
 
-[node name="Label8" type="Label" parent="."]
+[node name="Label8" type="Label" parent="LabelContainer"]
+layout_mode = 0
 offset_left = 271.0
 offset_top = 870.0
 offset_right = 424.0
@@ -111,7 +500,8 @@ theme_override_fonts/font = ExtResource("6_sfxbm")
 theme_override_font_sizes/font_size = 35
 text = "Da Font"
 
-[node name="Label3" type="Label" parent="."]
+[node name="Label3" type="Label" parent="LabelContainer"]
+layout_mode = 0
 offset_left = 792.0
 offset_top = 403.0
 offset_right = 1005.0
@@ -121,7 +511,8 @@ theme_override_fonts/font = ExtResource("6_sfxbm")
 theme_override_font_sizes/font_size = 25
 text = "Dialogic Contributors"
 
-[node name="Label5" type="Label" parent="."]
+[node name="Label5" type="Label" parent="LabelContainer"]
+layout_mode = 0
 offset_left = 792.0
 offset_top = 620.0
 offset_right = 1030.0
@@ -131,7 +522,8 @@ theme_override_fonts/font = ExtResource("6_sfxbm")
 theme_override_font_sizes/font_size = 25
 text = "Main Menu Referencial"
 
-[node name="Label7" type="Label" parent="."]
+[node name="Label7" type="Label" parent="LabelContainer"]
+layout_mode = 0
 offset_left = 803.0
 offset_top = 784.0
 offset_right = 1041.0
@@ -141,7 +533,8 @@ theme_override_fonts/font = ExtResource("6_sfxbm")
 theme_override_font_sizes/font_size = 25
 text = "Pixel Art Platform"
 
-[node name="Label9" type="Label" parent="."]
+[node name="Label9" type="Label" parent="LabelContainer"]
+layout_mode = 0
 offset_left = 809.0
 offset_top = 898.0
 offset_right = 1047.0
@@ -150,5 +543,10 @@ scale = Vector2(2.395, 2.395)
 theme_override_fonts/font = ExtResource("6_sfxbm")
 theme_override_font_sizes/font_size = 25
 text = "Font Variationq"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_rhshg")
+}
 
 [connection signal="pressed" from="Panel/BackBT" to="Panel/BackBT" method="_on_pressed"]

@@ -19,10 +19,8 @@ func pause():
 func testSettings():
 	if Input.is_action_just_pressed("settings") and !get_tree().paused:
 		pause()
-		print("pause")
 	elif Input.is_action_just_pressed("settings") and get_tree().paused:
 		resume()
-		print("resume")
 
 func _on_resume_pressed() -> void:
 	resume()
