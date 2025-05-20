@@ -39,7 +39,7 @@ func _process(delta):
 #Movement Mechanics
 func _physics_process(delta: float) -> void:
 #---------Official Movement Code With Joystick-----------
-	#direction = joystick.posVector
+	direction = joystick.posVector
 	#print(direction)
 	#if direction:
 		#direction = direction.normalized()
@@ -49,7 +49,7 @@ func _physics_process(delta: float) -> void:
 	#move_and_slide()
 	
 #-----------Debug Movement Code----------
-	direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
+	#direction = Input.get_vector("ui_a", "ui_d", "ui_w", "ui_s").normalized()
 	#direction = Input.get_vector("left", "right", "up", "down").normalized()
 	#if direction:
 		#velocity = direction * stat_component.Speed

@@ -228,16 +228,16 @@ text = "dwdwdwdwdwddw"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Healthbar" parent="CanvasLayer" instance=ExtResource("8_aw58j")]
-offset_left = 747.0
+offset_left = 585.0
 offset_top = 968.0
-offset_right = 962.0
+offset_right = 800.0
 offset_bottom = 976.0
 scale = Vector2(5.17, 5.17)
 
 [node name="Label" type="Label" parent="CanvasLayer"]
-offset_left = 1192.0
+offset_left = 1034.0
 offset_top = 872.0
-offset_right = 1246.0
+offset_right = 1088.0
 offset_bottom = 895.0
 scale = Vector2(3.49, 3.49)
 text = "Wizard

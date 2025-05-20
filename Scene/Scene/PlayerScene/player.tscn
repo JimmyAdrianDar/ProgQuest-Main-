@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://ph2t6bumjgfb"]
+[gd_scene load_steps=70 format=3 uid="uid://ph2t6bumjgfb"]
 
 [ext_resource type="Script" path="res://Scene/Script/PlayerScript/player.gd" id="1_y00a6"]
 [ext_resource type="PackedScene" uid="uid://bxog51hcup8oj" path="res://Character and Monster tscn/healthbar.tscn" id="4_0ural"]
@@ -24,6 +24,7 @@
 [ext_resource type="Script" path="res://Scene/Script/PlayerScript/player_state_machine.gd" id="28_2unps"]
 [ext_resource type="Texture2D" uid="uid://cki1nfs2hpyij" path="res://Sprite/PlayerSprite/Sword_Idle_full.png" id="28_mk1i4"]
 [ext_resource type="Texture2D" uid="uid://sndferrqrgqp" path="res://Sprite/JoystickSprite/Settings 2.png" id="28_ynjtd"]
+[ext_resource type="PackedScene" uid="uid://cuku4dgdcms1" path="res://Scene/Scene/PlayerScene/joystick.tscn" id="29_5yn6x"]
 [ext_resource type="Script" path="res://Scene/Script/PlayerScript/state_idle.gd" id="29_ex4bt"]
 [ext_resource type="Script" path="res://Scene/Script/PlayerScript/state_run.gd" id="30_fqvu7"]
 [ext_resource type="Texture2D" uid="uid://bbnjesl3xxc2y" path="res://Sprite/PlayerSprite/Sword_Hurt_full.png" id="30_u8kcs"]
@@ -1351,6 +1352,10 @@ action = "book"
 visible = false
 layout_mode = 1
 
+[node name="Joystick" parent="CanvasLayer/inGameUI" instance=ExtResource("29_5yn6x")]
+position = Vector2(342, 809)
+scale = Vector2(3.47, 3.47)
+
 [node name="MovementWheel" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 0
@@ -1366,6 +1371,7 @@ texture_pressed = SubResource("AtlasTexture_sudda")
 action = "settings"
 
 [node name="Up" type="TouchScreenButton" parent="CanvasLayer/MovementWheel"]
+visible = false
 texture_filter = 2
 position = Vector2(252, 552)
 scale = Vector2(2.75, 2.75)
@@ -1374,6 +1380,7 @@ texture_pressed = SubResource("AtlasTexture_jppba")
 action = "up"
 
 [node name="Down" type="TouchScreenButton" parent="CanvasLayer/MovementWheel"]
+visible = false
 texture_filter = 2
 position = Vector2(251, 888)
 scale = Vector2(2.75, 2.75)
@@ -1382,6 +1389,7 @@ texture_pressed = SubResource("AtlasTexture_aawod")
 action = "down"
 
 [node name="Left" type="TouchScreenButton" parent="CanvasLayer/MovementWheel"]
+visible = false
 texture_filter = 2
 position = Vector2(88, 721)
 scale = Vector2(2.75, 2.75)
@@ -1390,6 +1398,7 @@ texture_pressed = SubResource("AtlasTexture_a5qei")
 action = "left"
 
 [node name="Right" type="TouchScreenButton" parent="CanvasLayer/MovementWheel"]
+visible = false
 texture_filter = 2
 position = Vector2(427, 722)
 scale = Vector2(2.75, 2.75)
